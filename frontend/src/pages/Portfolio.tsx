@@ -64,7 +64,7 @@ const PortfolioItems: PortfolioCardProps[] = [
   },
   {
     title: "Genesis Programming Language💻",
-    desc: "A custom compiled language demonstrating deep compiler engineering expertise. Features strong typing and C-style syntax that transpiles to JavaScript—enabling type-safe code that runs anywhere without a custom runtime.",
+    desc: "A custom compiled language demonstrating deep compiler engineering expertise. Features strong typing and C-style syntax that transpiles to JavaScript, enabling type-safe code that runs anywhere without a custom runtime.",
     link: "https://github.com/Simpleboi/Genesis",
     image: "/assets/images/genesis.png",
     techStack: ["Node.js", "TypeScript", "Parser", "Compiler"],
