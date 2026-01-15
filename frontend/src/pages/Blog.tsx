@@ -95,13 +95,16 @@ export const BlogNewsLetter = () => {
 };
 
 const Filters = [
+  "Personal",
+  "Mental Health",
+  "Philosophy",
+  "Self-Improvement",
+  "Relationships",
+  "Career",
   "Web Development",
+  "Programming",
   "React",
   "TypeScript",
-  "Technology",
-  "Personal",
-  "Programming",
-  "Mental Health"
 ];
 
 export const Blog = () => {
