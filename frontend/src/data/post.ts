@@ -19,7 +19,7 @@ export const Posts: PostMeta[] = [
     date: "March 6th, 2025",
     tags: ["Personal", "Web Development"],
     image: "/assets/images/logo.jpg",
-    readingTime: 3,
+    readingTime: 6,
     component: React.lazy(() => import("../posts/intro")),
   },
   {
@@ -30,7 +30,7 @@ export const Posts: PostMeta[] = [
     date: "April 4th, 2025",
     tags: ["Personal", "Philosophy"],
     image: "/assets/images/sinner.jpg",
-    readingTime: 4,
+    readingTime: 6,
     component: React.lazy(() => import("../posts/judgement")),
   },
   {
@@ -41,7 +41,7 @@ export const Posts: PostMeta[] = [
     date: "April 29th, 2025",
     tags: ["Mental Health", "Career"],
     image: "/assets/images/burnout.jpg",
-    readingTime: 5,
+    readingTime: 9,
     component: React.lazy(() => import("../posts/burnout")),
   },
   {
@@ -52,7 +52,7 @@ export const Posts: PostMeta[] = [
     date: "April 30th, 2025",
     tags: ["Mental Health", "Self-Improvement"],
     image: "/assets/images/comparison.jpg",
-    readingTime: 5,
+    readingTime: 8,
     component: React.lazy(() => import("../posts/comparison")),
   },
   {
@@ -63,7 +63,7 @@ export const Posts: PostMeta[] = [
     date: "May 2nd, 2025",
     tags: ["Web Development", "Programming"],
     image: "/assets/images/tailwind.png",
-    readingTime: 6,
+    readingTime: 1,
     component: React.lazy(() => import("../posts/Tailwind")),
   },
   {
@@ -74,7 +74,7 @@ export const Posts: PostMeta[] = [
     date: "May 3rd, 2025",
     tags: ["Personal", "Self-Improvement"],
     image: "/assets/images/pride.jpg",
-    readingTime: 7,
+    readingTime: 11,
     component: React.lazy(() => import("../posts/Pride")),
   },
   {
@@ -85,7 +85,7 @@ export const Posts: PostMeta[] = [
     date: "June 16th, 2025",
     tags: ["Programming", "TypeScript"],
     image: "/assets/images/genesis.png",
-    readingTime: 4,
+    readingTime: 5,
     component: React.lazy(() => import("../posts/genv093")),
   },
   {
@@ -107,7 +107,7 @@ export const Posts: PostMeta[] = [
     date: "September 25th, 2025",
     tags: ["Personal", "Relationships"],
     image: "/assets/images/betrayal.jpg",
-    readingTime: 6,
+    readingTime: 8,
     component: React.lazy(() => import("../posts/Betrayal")),
   },
   {
@@ -129,7 +129,7 @@ export const Posts: PostMeta[] = [
     date: "October 7th, 2025",
     tags: ["Personal", "Self-Improvement"],
     image: "/assets/images/healing.jpg",
-    readingTime: 6,
+    readingTime: 7,
     component: React.lazy(() => import("../posts/Healing")),
   },
   {
@@ -140,7 +140,7 @@ export const Posts: PostMeta[] = [
     date: "October 9th, 2025",
     tags: ["Personal", "Relationships"],
     image: "/assets/images/trauma.jpg",
-    readingTime: 7,
+    readingTime: 5,
     component: React.lazy(() => import("../posts/trauma")),
   },
   {
@@ -151,7 +151,7 @@ export const Posts: PostMeta[] = [
     date: "October 15th, 2025",
     tags: ["Personal", "Philosophy"],
     image: "/assets/images/right-and-wrong.jpg",
-    readingTime: 9,
+    readingTime: 7,
     component: React.lazy(() => import("../posts/Badpeople")),
   },
   {
@@ -173,7 +173,7 @@ export const Posts: PostMeta[] = [
     date: "October 25th, 2025",
     tags: ["Personal", "Philosophy"],
     image: "/assets/images/death.jpg",
-    readingTime: 8,
+    readingTime: 9,
     component: React.lazy(() => import("../posts/Death")),
   },
   {
@@ -184,7 +184,7 @@ export const Posts: PostMeta[] = [
     date: "November 18th, 2025",
     tags: ["Personal", "Philosophy"],
     image: "/assets/images/happiness.jpg",
-    readingTime: 11,
+    readingTime: 9,
     component: React.lazy(() => import("../posts/Happiness")),
   },
   // {
@@ -206,18 +206,29 @@ export const Posts: PostMeta[] = [
     date: "November 27th, 2025",
     tags: ["Personal"],
     image: "/assets/images/thanksgiving.jpg",
-    readingTime: 7,
+    readingTime: 5,
     component: React.lazy(() => import("../posts/Thanksgiving")),
   },
+  // {
+  //   slug: "loud-dreams",
+  //   title: "The Quiet Cost of Loud Dreams",
+  //   description:
+  //     "This post is a reminder that dreaming big means nothing without consistency, effort, and the willingness to show up on the hard days.",
+  //   date: "January 14th, 2025",
+  //   tags: ["Personal", "Self-Improvement", "Philosophy"],
+  //   image: "/assets/images/hardwork.jpg",
+  //   readingTime: 7,
+  //   component: React.lazy(() => import("../posts/Hardwork")),
+  // },
   {
-    slug: "loud-dreams",
-    title: "The Quiet Cost of Loud Dreams",
+    slug: "loving-your-child",
+    title: "The Responsibility of Loving Your Child",
     description:
-      "This post is a reminder that dreaming big means nothing without consistency, effort, and the willingness to show up on the hard days.",
+      "This post examines parenthood through the lens of love, identity, and expectation. Questioning what children truly need from the people raising them.",
     date: "January 14th, 2025",
-    tags: ["Personal", "Self-Improvement", "Philosophy"],
-    image: "/assets/images/hardwork.jpg",
-    readingTime: 10,
-    component: React.lazy(() => import("../posts/Hardwork")),
+    tags: ["Personal", "Mental Health", "Philosophy"],
+    image: "/assets/images/parenthood.jpg",
+    readingTime: 11,
+    component: React.lazy(() => import("../posts/Parent")),
   },
 ];
