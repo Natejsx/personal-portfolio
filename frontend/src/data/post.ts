@@ -209,4 +209,15 @@ export const Posts: PostMeta[] = [
     readingTime: 7,
     component: React.lazy(() => import("../posts/Thanksgiving")),
   },
+  {
+    slug: "loud-dreams",
+    title: "The Quiet Cost of Loud Dreams",
+    description:
+      "This post is a reminder that dreaming big means nothing without consistency, effort, and the willingness to show up on the hard days.",
+    date: "January 14th, 2025",
+    tags: ["Personal", "Mental Health"],
+    image: "/assets/images/hardwork.jpg",
+    readingTime: 10,
+    component: React.lazy(() => import("../posts/Hardwork")),
+  },
 ];
