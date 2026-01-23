@@ -17,9 +17,9 @@ export const Posts: PostMeta[] = [
     title: "My First Blog Post!",
     description: "Why I made the blog and what I'll write about.",
     date: "March 6th, 2025",
-    tags: ["Web Development", "Personal", "Nate.jsx"],
+    tags: ["Personal", "Web Development"],
     image: "/assets/images/logo.jpg",
-    readingTime: 3,
+    readingTime: 6,
     component: React.lazy(() => import("../posts/intro")),
   },
   {
@@ -28,9 +28,9 @@ export const Posts: PostMeta[] = [
     description:
       "A small rant about a society full of sinners, judging other sinners for sinning differently",
     date: "April 4th, 2025",
-    tags: ["Mental-health", "Personal"],
+    tags: ["Personal", "Philosophy"],
     image: "/assets/images/sinner.jpg",
-    readingTime: 4,
+    readingTime: 6,
     component: React.lazy(() => import("../posts/judgement")),
   },
   {
@@ -39,9 +39,9 @@ export const Posts: PostMeta[] = [
     description:
       "Feeling drained and overwhelmed by work is a tough spot. This post explores the dangers of pushing yourself too hard and hitting burnout.",
     date: "April 29th, 2025",
-    tags: ["Mental-health", "Personal", "Burnout"],
+    tags: ["Mental Health", "Career"],
     image: "/assets/images/burnout.jpg",
-    readingTime: 5,
+    readingTime: 9,
     component: React.lazy(() => import("../posts/burnout")),
   },
   {
@@ -50,9 +50,9 @@ export const Posts: PostMeta[] = [
     description:
       "This post talks about not comparing yourself to others and unlocking greater self-acceptance by letting go of comparisons.",
     date: "April 30th, 2025",
-    tags: ["Mental-health", "Personal", "Self Love"],
+    tags: ["Mental Health", "Self-Improvement"],
     image: "/assets/images/comparison.jpg",
-    readingTime: 5,
+    readingTime: 8,
     component: React.lazy(() => import("../posts/comparison")),
   },
   {
@@ -61,9 +61,9 @@ export const Posts: PostMeta[] = [
     description:
       "This post talks about why I switched over my styles from SASS to TailwindCSS in all my future projects.",
     date: "May 2nd, 2025",
-    tags: ["Mental-health", "SASS", "TailwindCSS"],
+    tags: ["Web Development", "Programming"],
     image: "/assets/images/tailwind.png",
-    readingTime: 6,
+    readingTime: 1,
     component: React.lazy(() => import("../posts/Tailwind")),
   },
   {
@@ -72,9 +72,9 @@ export const Posts: PostMeta[] = [
     description:
       "This post talks about how pride almost destroyed my entire life and how the journey toward humility helped rebuild what I lost",
     date: "May 3rd, 2025",
-    tags: ["Mental-health", "Pride", "Personal"],
+    tags: ["Personal", "Self-Improvement"],
     image: "/assets/images/pride.jpg",
-    readingTime: 7,
+    readingTime: 11,
     component: React.lazy(() => import("../posts/Pride")),
   },
   {
@@ -83,9 +83,9 @@ export const Posts: PostMeta[] = [
     description:
       "This post talks about production updates for the Genesis programming Language version 0.9.3",
     date: "June 16th, 2025",
-    tags: ["Web Development", "Programming", "TypeScript"],
+    tags: ["Programming", "TypeScript"],
     image: "/assets/images/genesis.png",
-    readingTime: 4,
+    readingTime: 5,
     component: React.lazy(() => import("../posts/genv093")),
   },
   {
@@ -94,7 +94,7 @@ export const Posts: PostMeta[] = [
     description:
       "This post talks about my experience and overall feelings with the React.js library",
     date: "June 23rd, 2025",
-    tags: ["Web Development", "Programming", "React"],
+    tags: ["Web Development", "React"],
     image: "/assets/images/React.webp",
     readingTime: 5,
     component: React.lazy(() => import("../posts/ReactUpdate")),
@@ -105,9 +105,9 @@ export const Posts: PostMeta[] = [
     description:
       "This post is a story on a betrayal I endured and how I overcame it, and so can you.",
     date: "September 25th, 2025",
-    tags: ["Personal", "Mental Health", "Self Help"],
+    tags: ["Personal", "Relationships"],
     image: "/assets/images/betrayal.jpg",
-    readingTime: 6,
+    readingTime: 8,
     component: React.lazy(() => import("../posts/Betrayal")),
   },
   {
@@ -116,7 +116,7 @@ export const Posts: PostMeta[] = [
     description:
       "This post is an introspective look at love, what it is, what it isn't, and learning to live fully even when love no longer stays.",
     date: "October 5th, 2025",
-    tags: ["Personal", "Mental Health", "Love"],
+    tags: ["Personal", "Relationships"],
     image: "/assets/images/love.jpg",
     readingTime: 8,
     component: React.lazy(() => import("../posts/Love")),
@@ -127,9 +127,9 @@ export const Posts: PostMeta[] = [
     description:
       "This post talks about a sound that follows heartbreak, not the echo of loss, but the whisper of something new growing in its place. That's the sound I learned to listen for.",
     date: "October 7th, 2025",
-    tags: ["Personal", "Mental Health", "Healing"],
+    tags: ["Personal", "Self-Improvement"],
     image: "/assets/images/healing.jpg",
-    readingTime: 6,
+    readingTime: 7,
     component: React.lazy(() => import("../posts/Healing")),
   },
   {
@@ -138,9 +138,9 @@ export const Posts: PostMeta[] = [
     description:
       "This post is about understanding the pull of toxic love, the weight of staying out of fear, and the peace that comes when you finally choose yourself.",
     date: "October 9th, 2025",
-    tags: ["Personal", "Mental Health", "Trauma Bonding"],
+    tags: ["Personal", "Relationships"],
     image: "/assets/images/trauma.jpg",
-    readingTime: 7,
+    readingTime: 5,
     component: React.lazy(() => import("../posts/trauma")),
   },
   {
@@ -149,9 +149,9 @@ export const Posts: PostMeta[] = [
     description:
       "This post challenges the idea of absolute morality by asking uncomfortable questions about judgment, justice, and human behavior. It explores whether 'good' and 'bad' are fixed truths, or just reflections of what society chooses to believe.",
     date: "October 15th, 2025",
-    tags: ["Personal", "Mental Health", "Morality"],
+    tags: ["Personal", "Philosophy"],
     image: "/assets/images/right-and-wrong.jpg",
-    readingTime: 9,
+    readingTime: 7,
     component: React.lazy(() => import("../posts/Badpeople")),
   },
   {
@@ -160,7 +160,7 @@ export const Posts: PostMeta[] = [
     description:
       "This post counters the way we think about education. From failing grades to a passion for teaching, I share how real learning doesn't come from passing tests, it comes from curiosity, failure, and the courage to think differently.",
     date: "October 17th, 2025",
-    tags: ["Personal", "Mental Health", "Education"],
+    tags: ["Personal", "Philosophy"],
     image: "/assets/images/education.jpg",
     readingTime: 9,
     component: React.lazy(() => import("../posts/Education")),
@@ -171,9 +171,9 @@ export const Posts: PostMeta[] = [
     description:
       "This post asks what it truly means to live while knowing we'll die. It challenges the fear of mortality, celebrates the beauty of existence, and reminds us that our time here, brief as it may be, is the most precious thing we'll ever have.",
     date: "October 25th, 2025",
-    tags: ["Personal"],
+    tags: ["Personal", "Philosophy"],
     image: "/assets/images/death.jpg",
-    readingTime: 8,
+    readingTime: 9,
     component: React.lazy(() => import("../posts/Death")),
   },
   {
@@ -182,9 +182,9 @@ export const Posts: PostMeta[] = [
     description:
       "This post explores the difference between chasing happiness and finding contentment, diving into the loneliness of pursuit, the fear of stillness, and the quiet peace that comes when we stop running from ourselves.",
     date: "November 18th, 2025",
-    tags: ["Personal"],
+    tags: ["Personal", "Philosophy"],
     image: "/assets/images/happiness.jpg",
-    readingTime: 11,
+    readingTime: 9,
     component: React.lazy(() => import("../posts/Happiness")),
   },
   // {
@@ -204,9 +204,31 @@ export const Posts: PostMeta[] = [
     description:
       "This post is a simple moment to pause and appreciate the people, memories, and growth that made this year meaningful.",
     date: "November 27th, 2025",
-    tags: ["Personal", "Mental Health"],
+    tags: ["Personal"],
     image: "/assets/images/thanksgiving.jpg",
-    readingTime: 7,
+    readingTime: 5,
     component: React.lazy(() => import("../posts/Thanksgiving")),
+  },
+  // {
+  //   slug: "loud-dreams",
+  //   title: "The Quiet Cost of Loud Dreams",
+  //   description:
+  //     "This post is a reminder that dreaming big means nothing without consistency, effort, and the willingness to show up on the hard days.",
+  //   date: "January 14th, 2025",
+  //   tags: ["Personal", "Self-Improvement", "Philosophy"],
+  //   image: "/assets/images/hardwork.jpg",
+  //   readingTime: 7,
+  //   component: React.lazy(() => import("../posts/Hardwork")),
+  // },
+  {
+    slug: "loving-your-child",
+    title: "The Responsibility of Loving Your Child",
+    description:
+      "This post examines parenthood through the lens of love, identity, and expectation. Questioning what children truly need from the people raising them.",
+    date: "January 14th, 2025",
+    tags: ["Personal", "Mental Health", "Philosophy"],
+    image: "/assets/images/parenthood.jpg",
+    readingTime: 11,
+    component: React.lazy(() => import("../posts/Parent")),
   },
 ];
