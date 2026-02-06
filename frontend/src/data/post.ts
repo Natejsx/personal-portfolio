@@ -231,4 +231,15 @@ export const Posts: PostMeta[] = [
     readingTime: 11,
     component: React.lazy(() => import("../posts/Parent")),
   },
+  {
+    slug: "family-betrayal",
+    title: "Waiting for the Storm to Apologize",
+    description:
+      "This post explores the quiet cost of staying loyal to people who hurt us, and the complicated line between love, obligation, and self-preservation. Through one story, it asks when family stops being a refuge and starts becoming a wound.",
+    date: "February 5th, 2025",
+    tags: ["Personal", "Mental Health", "Philosophy"],
+    image: "/assets/images/family.jpg",
+    readingTime: 12,
+    component: React.lazy(() => import("../posts/Family")),
+  },
 ];
