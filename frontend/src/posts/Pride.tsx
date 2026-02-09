@@ -131,7 +131,7 @@ const Pride = () => {
         understand what pride really was and how to loosen its grip on my life.
         Slowly, I began replacing pride with humility. I practiced patience. I
         learned to listen without needing to be right. I started asking, “
-        <em>What can I learn from this?</em>” instead of{" "}
+        <em>What can I learn from this?</em>” instead of{' '}
         <em>“How can I win this?</em>”
         <br />
         <br />
@@ -225,11 +225,11 @@ const Pride = () => {
         <br />
         <br />
         <strong>Reflect Daily</strong>. Keep a journal. Ask yourself hard
-        questions.{" "}
+        questions.{' '}
         <em>
           "Was I defensive today? Did I need to be right? Did I interrupt
           someone trying to express themselves?"
-        </em>{" "}
+        </em>{' '}
         Reflection is the mirror pride hates most, but it's also the mirror that
         reveals your truest self. Use it not to judge, but to understand. I
         started journaling at night, nothing fancy, just a few lines about how
@@ -301,8 +301,7 @@ const Pride = () => {
         into it. And know that you're not alone on the journey. I'm rooting for
         you. Stay blessed, and stay true to the person you're becoming. I love
         you all.💚
-        <br />
-        - <span>&lt;Nate&gt;</span>
+        <br />- <span>&lt;Nate&gt;</span>
       </p>
     </div>
   );

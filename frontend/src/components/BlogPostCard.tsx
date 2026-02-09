@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "../styles/BlogPostCard.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/BlogPostCard.scss';
 
 type BlogPostProps = {
   slug: string;
@@ -11,13 +11,13 @@ type BlogPostProps = {
   image: string;
   readingTime: number;
   onSearch: (t: string) => void;
-}
+};
 
 export const BlogPostCard: React.FC<BlogPostProps> = ({
-  postName = "Post Name",
-  postDesc = "A basic Description",
-  postDate = "January 1st, 2025",
-  filters = ["General"],
+  postName = 'Post Name',
+  postDesc = 'A basic Description',
+  postDate = 'January 1st, 2025',
+  filters = ['General'],
   image,
   slug,
   readingTime,

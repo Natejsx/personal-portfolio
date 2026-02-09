@@ -2,7 +2,7 @@ const Hardwork = () => {
   return (
     <div>
       <p>
-        Before I get into this, I want to start by saying{" "}
+        Before I get into this, I want to start by saying{' '}
         <strong>Happy New Year!</strong> I had a wonderful holiday, and I hope
         you did too. A new year always brings reflection, and for me, one word
         keeps resurfacing: ambition. So what is <em>ambition</em>, really? By
@@ -167,11 +167,15 @@ const Hardwork = () => {
         <br />
         <br />
         Now, I'm not sponsored by them or anything, but I want to mention a
-        platform I personally use every day called <a href="https://journalxp.com/" target="_blank">JournalXP</a>. It's a journaling
-        and self-improvement platform built around consistency. It encourages
-        users to take care of their mental and physical well-being by rewarding
-        small but meaningful actions like completing habits, checking off daily
-        tasks, and showing up for yourself even when motivation is low.
+        platform I personally use every day called{' '}
+        <a href="https://journalxp.com/" target="_blank">
+          JournalXP
+        </a>
+        . It's a journaling and self-improvement platform built around
+        consistency. It encourages users to take care of their mental and
+        physical well-being by rewarding small but meaningful actions like
+        completing habits, checking off daily tasks, and showing up for yourself
+        even when motivation is low.
         <br />
         <br />
         What I appreciate most about it is how flexible it feels. On days when
@@ -196,8 +200,7 @@ const Hardwork = () => {
         <br />I believe in you. Keep going. Work hard for the goals you want,
         even when it's uncomfortable. Shoot for the stars, my friend.
         <br />
-        <br />
-        - Nate
+        <br />- Nate
       </p>
     </div>
   );

@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/TestimonialCard.scss";
+import React from 'react';
+import '../styles/TestimonialCard.scss';
 
 interface TestimonialCardProps {
   quote: string;

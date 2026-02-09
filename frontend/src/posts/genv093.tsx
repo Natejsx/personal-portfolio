@@ -4,7 +4,7 @@ const GenesisV093 = () => {
       <p>
         Good Morning!
         <br />
-        This is my first official post about{" "}
+        This is my first official post about{' '}
         <strong>
           <em>Genesis</em>
         </strong>
@@ -44,7 +44,7 @@ const GenesisV093 = () => {
       </p>
       <h2>🚧 Current Development & Version 0.9.3 Update</h2>
       <p>
-        As of June 16th, 2025, Genesis is still under active development and is{" "}
+        As of June 16th, 2025, Genesis is still under active development and is{' '}
         <strong>not yet production ready</strong>. However, I've made strong
         progress in laying the foundation for the language's compiler pipeline.
         <br />
@@ -109,17 +109,18 @@ const GenesisV093 = () => {
         vision is to provide a beautiful balance between structure and
         creativity, offering developers a tool that makes writing code feel
         intuitive, safe, and enjoyable, without compromising performance or
-        ecosystem compatibility. 
+        ecosystem compatibility.
         <br />
         <br />
-        If you're interested in the progress or want to
-        contribute, keep an eye out for upcoming updates, example projects, and
-        documentation. Click <a href="https://github.com/Simpleboi/Genesis" target="_blank">Here</a> if you'd like to see the GitHub repo for Genesis.
-        Version 1.0 will be focused on stability, developer
-        experience, and real-world usage. Thanks for following the journey.
-        Let's keep building.
-        <br />
-        - <span>&lt;Nate/&gt;</span>
+        If you're interested in the progress or want to contribute, keep an eye
+        out for upcoming updates, example projects, and documentation. Click{' '}
+        <a href="https://github.com/Simpleboi/Genesis" target="_blank">
+          Here
+        </a>{' '}
+        if you'd like to see the GitHub repo for Genesis. Version 1.0 will be
+        focused on stability, developer experience, and real-world usage. Thanks
+        for following the journey. Let's keep building.
+        <br />- <span>&lt;Nate/&gt;</span>
       </p>
     </div>
   );

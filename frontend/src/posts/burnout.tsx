@@ -21,14 +21,16 @@ const Burnout = () => {
         accelerated.
         <br />
         <br />
-        Then, inevitably, I crashed. Summer 2023 arrived, and I doubled
-        down on four summer courses and those same two jobs, each demanding my
-        undivided attention. Half the week I spent in all-nighters, where sleep
-        became a distant memory and energy drinks blurred the lines between
-        productivity and self-destruction. My body rebelled against me, my
-        muscles ached, focus dissolved, and a heavy fog of agitation settled in
-        my mind. I was burned out, completely and utterly. I had the worst
-        headache known to man, my body gave up on me. I didn't want to believe that I was burned out but my body made it very clear when I became bedridden from overworking myself.
+        Then, inevitably, I crashed. Summer 2023 arrived, and I doubled down on
+        four summer courses and those same two jobs, each demanding my undivided
+        attention. Half the week I spent in all-nighters, where sleep became a
+        distant memory and energy drinks blurred the lines between productivity
+        and self-destruction. My body rebelled against me, my muscles ached,
+        focus dissolved, and a heavy fog of agitation settled in my mind. I was
+        burned out, completely and utterly. I had the worst headache known to
+        man, my body gave up on me. I didn't want to believe that I was burned
+        out but my body made it very clear when I became bedridden from
+        overworking myself.
         <br />
         <br />
         It took that breaking point for me to realize life's beauty isn't
@@ -40,10 +42,10 @@ const Burnout = () => {
         friends, wander without an agenda, and enjoy the simple pleasures that
         once felt forbidden.
         <br />
-        <br />I discovered that rewarding yourself isn't a punishment, it's fuel.
-        By granting myself permission to unwind, I amplify my focus and passion
-        when it's time to work. Rest isn't the enemy of progress; it's the
-        backbone of true success. So hear me when I say: your ambition is a
+        <br />I discovered that rewarding yourself isn't a punishment, it's
+        fuel. By granting myself permission to unwind, I amplify my focus and
+        passion when it's time to work. Rest isn't the enemy of progress; it's
+        the backbone of true success. So hear me when I say: your ambition is a
         gift, but it can become a chain. Tend to your spark wisely, nurture it
         with rest, let it dance with balance, and watch how brightly it burns
         when you refuse to let burnout take you out.
@@ -70,8 +72,8 @@ const Burnout = () => {
         hint at deeper issues. Burnout can disrupt your body's regulation of
         cortisol and melatonin. You might find yourself lying awake replaying
         to-do lists at 3 a.m., or conversely, sleeping through alarms despite
-        pressing deadlines. Either way, too little or too much sleep,
-        signals that your nervous system is out of sync and needs intervention.
+        pressing deadlines. Either way, too little or too much sleep, signals
+        that your nervous system is out of sync and needs intervention.
         <br />
         <br />
         Physically, burnout can manifest as persistent muscle tension,
@@ -134,9 +136,10 @@ const Burnout = () => {
         get lost in its pages.
         <br />
         <br />
-        That simple act of shifting from “I blew it” to “Here's my fix”, did more
-        than replenish my energy. It reminded me that balance is dynamic. Even
-        when plans derail, small course-corrections keep you moving forward.
+        That simple act of shifting from “I blew it” to “Here's my fix”, did
+        more than replenish my energy. It reminded me that balance is dynamic.
+        Even when plans derail, small course-corrections keep you moving
+        forward.
         <br />
         <br />
         To turn setbacks into springboards:
@@ -169,20 +172,19 @@ const Burnout = () => {
         <br />
         As you wrap up this journey from overwhelm to ownership, remember that
         true success isn't measured by how many tasks you check off, but by how
-        fiercely you protect your well-being along the way. I'm no kinesiology guru, this is simply my own experiences and examples to help others overcome burnout just as it helped me. 
+        fiercely you protect your well-being along the way. I'm no kinesiology
+        guru, this is simply my own experiences and examples to help others
+        overcome burnout just as it helped me.
         <br />
         <br />
-        When life throws you off
-        course, turn reflection into real change. Now it's your turn to
-        put these insights into action: honor your signals, plan your pauses,
-        and forgive yourself when you stumble. Treat balance as a practice
-        rather than a perfect destination, and you'll keep your passion alive, your
-        mind clear, and your heart open to both achievement and joy. Here's to
-        tending your spark with intention, so it continues to light your
-        path, bright. Have a blessed day💚
-        <br />
-        - <span>&lt;Nate&gt;</span>
-
+        When life throws you off course, turn reflection into real change. Now
+        it's your turn to put these insights into action: honor your signals,
+        plan your pauses, and forgive yourself when you stumble. Treat balance
+        as a practice rather than a perfect destination, and you'll keep your
+        passion alive, your mind clear, and your heart open to both achievement
+        and joy. Here's to tending your spark with intention, so it continues to
+        light your path, bright. Have a blessed day💚
+        <br />- <span>&lt;Nate&gt;</span>
       </p>
     </div>
   );

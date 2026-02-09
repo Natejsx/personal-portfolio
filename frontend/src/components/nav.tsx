@@ -1,6 +1,6 @@
-import React, { useEffect, useState, KeyboardEvent, useRef } from "react";
-import { Link } from "react-router-dom";
-import "../styles/nav.scss";
+import React, { useEffect, useState, KeyboardEvent, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/nav.scss';
 
 interface NavLinkProps {
   to: string;
@@ -10,12 +10,12 @@ interface NavLinkProps {
 
 // Common navigation links used across components
 const navLinks = [
-  { to: "/", label: "Home" },
-  { to: "/portfolio", label: "Portfolio" },
-  { to: "/about", label: "About" },
-  { to: "/testimonials", label: "Testimonials" },
-  { to: "/blog", label: "Blog" },
-  { to: "/contact", label: "Contact" },
+  { to: '/', label: 'Home' },
+  { to: '/portfolio', label: 'Portfolio' },
+  { to: '/about', label: 'About' },
+  { to: '/testimonials', label: 'Testimonials' },
+  { to: '/blog', label: 'Blog' },
+  { to: '/contact', label: 'Contact' },
 ];
 
 const NavLink: React.FC<NavLinkProps> = ({ to, label, onClick }) => (
@@ -43,32 +43,32 @@ export const MobileNav = () => {
       const target = event.target as HTMLElement;
       if (
         isMenuOpen &&
-        !target.closest(".mobile-menu") &&
-        !target.closest(".mobile-btn")
+        !target.closest('.mobile-menu') &&
+        !target.closest('.mobile-btn')
       ) {
         setIsMenuOpen(false);
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isMenuOpen]);
 
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
       // Focus the first link when menu opens
       setTimeout(() => {
         firstLinkRef.current?.focus();
       }, 100);
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
     }
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
     };
   }, [isMenuOpen]);
 
@@ -77,13 +77,13 @@ export const MobileNav = () => {
     if (!isMenuOpen) return;
 
     // Close menu on Escape key
-    if (e.key === "Escape") {
+    if (e.key === 'Escape') {
       setIsMenuOpen(false);
       menuButtonRef.current?.focus();
     }
 
     // Trap focus within the menu
-    if (e.key === "Tab") {
+    if (e.key === 'Tab') {
       // If shift+tab on first element, move to last element
       if (e.shiftKey && document.activeElement === firstLinkRef.current) {
         e.preventDefault();
@@ -107,12 +107,12 @@ export const MobileNav = () => {
         aria-expanded={isMenuOpen}
         aria-controls="mobile-menu"
       >
-        <i className={`bx ${isMenuOpen ? "bx-x" : "bx-menu"}`}></i>
+        <i className={`bx ${isMenuOpen ? 'bx-x' : 'bx-menu'}`}></i>
       </button>
       <div
         id="mobile-menu"
         ref={menuRef}
-        className={`mobile-menu ${isMenuOpen ? "open" : ""}`}
+        className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}
         aria-hidden={!isMenuOpen}
         onKeyDown={handleKeyDown}
         role="dialog"
@@ -183,22 +183,22 @@ export const Nav: React.FC = () => {
     };
 
     // Listener for mount
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
 
     handleResize();
     handleScroll();
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <>
       {/* <SkipLink /> */}
-      <nav className={`nav-container ${scrolled ? "scrolled" : ""}`}>
+      <nav className={`nav-container ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-content">
           <div className="nav-img-container">
             <Link to="/" aria-label="Home">

@@ -1,6 +1,6 @@
-import React from "react";
-import "../styles/aboutCard.scss";
-import PFP from "/assets/images/logo.jpg";
+import React from 'react';
+import '../styles/aboutCard.scss';
+import PFP from '/assets/images/logo.jpg';
 
 export const AboutCard: React.FC = () => {
   return (
@@ -25,10 +25,10 @@ export const AboutCard: React.FC = () => {
           <br />
           Over the years, I've put my knowledge into action by working on
           various projects and taking on leadership roles. I'm currently the
-          President of the{" "}
+          President of the{' '}
           <a href="https://sjcsouthcompsci.netlify.app/" target="_blankt">
             Computer Science Club
-          </a>{" "}
+          </a>{' '}
           at my college, where I guide and inspire other students in thier
           coding journeys. Some of my personal projects include:
           <br />
@@ -37,28 +37,28 @@ export const AboutCard: React.FC = () => {
             <li>
               <a href="https://journalxp.com" target="_blank">
                 JournalXP
-              </a>{" "}
+              </a>{' '}
               | A gameified mental health journaling app that rewards users with
               XP for completing self-care tasks, tracking thier mood, etc.
             </li>
             <li>
               <a href="https://github.com/Simpleboi/Genesis" target="_blank">
                 Genesis
-              </a>{" "}
+              </a>{' '}
               | A general-purpose programming language designed with a focus on
               web development.
             </li>
             <li>
               <a href="https://github.com/Simpleboi/sparkcss" target="_blank">
                 SparkCSS
-              </a>{" "}
+              </a>{' '}
               | A custom CSS preprocessor that utilizes framework rich features
               with a utility-first approach
             </li>
             <li>
               <a href="https://github.com/Simpleboi/FireSpark" target="_blank">
                 FireSpark
-              </a>{" "}
+              </a>{' '}
               | A framework-agnostic component based library aimed to speed-up
               web development. Built on top of SparkCSS.
             </li>
@@ -66,8 +66,8 @@ export const AboutCard: React.FC = () => {
           <br />
           I mostly build with the MERN stack: React on the front end
           (bootstrapped with Vite), Node/Express for APIs, and MongoDB for data.
-          I lean on TypeScript where it helps, and I keep the UI
-          lightweight, often with a small utility stylesheet I wrote called SparkCSS. It's a
+          I lean on TypeScript where it helps, and I keep the UI lightweight,
+          often with a small utility stylesheet I wrote called SparkCSS. It's a
           setup that lets me ship fast, handle real-world CRUD, and scale
           without drama.
           <br />

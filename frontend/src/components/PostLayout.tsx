@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "../styles/postLayout.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/postLayout.scss';
 
 interface PostLayoutProps {
   title: string;
@@ -24,7 +24,7 @@ export const PostLayout: React.FC<PostLayoutProps> = ({
       <header className="post-header">
         <h1 className="post-title">{title}</h1>
         <p className="post-meta">
-          By{" "}
+          By{' '}
           <span className="author">
             {author} • <time dateTime={date}>{date}</time> • {readingTime}
           </span>

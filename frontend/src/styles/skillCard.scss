@@ -1,4 +1,4 @@
-@use "./plug" as p;
+@use './plug' as p;
 
 .skills-card-container {
   width: 100%;
@@ -23,7 +23,7 @@
     padding-bottom: 0.5rem;
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;

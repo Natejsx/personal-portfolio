@@ -29,7 +29,7 @@ const Death = () => {
         <br />
         <br />A lot of people think the fact that life ends makes it
         meaningless. But I think it's the opposite. If you watched a movie and
-        knew it would never end, wouldn't it lose its meaning? It's the{" "}
+        knew it would never end, wouldn't it lose its meaning? It's the{' '}
         <em>ending</em> that gives the story its weight, every moment matters
         because it won't last forever. Life works the same way.
         <br />
@@ -156,7 +156,7 @@ const Death = () => {
         maybe, just maybe, that's what makes this fleeting existence something
         worth celebrating.
         <br />
-        <br />I think the real question isn't <em>when</em> we'll die, it's{" "}
+        <br />I think the real question isn't <em>when</em> we'll die, it's{' '}
         <em>how</em> we'll live before we do. We spend so much time fearing the
         end that we forget to actually be present in the middle. What would life
         look like if we treated every moment as something sacred, not because it
@@ -173,15 +173,16 @@ const Death = () => {
         So take a second to look around. Feel the air in your lungs, the pulse
         beneath your skin, the way the light hits the world around you. You're
         alive, Here and now, against impossible odds, in an infinite universe
-        that could have easily gone without you. Yet somehow, <em>you</em> exist. Out of
-        all the possibilities that never were, we're the blessed few who got the
-        chance to be born, the ones who got a chance to live.
+        that could have easily gone without you. Yet somehow, <em>you</em>{' '}
+        exist. Out of all the possibilities that never were, we're the blessed
+        few who got the chance to be born, the ones who got a chance to live.
         <br />
         <br />
-        Don't waste that miracle waiting for the credits to roll. The ending will come when it's meant to. Until then, keep living the story like it matters, because it does.
+        Don't waste that miracle waiting for the credits to roll. The ending
+        will come when it's meant to. Until then, keep living the story like it
+        matters, because it does.
         <br />
-        <br />
-        - Nate
+        <br />- Nate
       </p>
     </div>
   );

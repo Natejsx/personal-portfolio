@@ -2,12 +2,15 @@ const Comparison = () => {
   return (
     <div className="post-four">
       <p>
-        “<em><b>Comparison is the thief of joy</b></em>”, I'd heard that line tossed
-        around, but I never truly understood its weight until it cut me down to
-        size personally. In the world of programming, where every student races
-        to write cleaner code, land the hottest internships, and master
-        algorithms, it's all too easy to let someone else's highlight reel
-        define your worth.
+        “
+        <em>
+          <b>Comparison is the thief of joy</b>
+        </em>
+        ”, I'd heard that line tossed around, but I never truly understood its
+        weight until it cut me down to size personally. In the world of
+        programming, where every student races to write cleaner code, land the
+        hottest internships, and master algorithms, it's all too easy to let
+        someone else's highlight reel define your worth.
         <br />
         <br />
         For years, I thought programming was a competition: who could submit the
@@ -58,20 +61,20 @@ const Comparison = () => {
         No amount of hustle could close the gap I'd pictured in my head, because
         that gap existed only in comparison. My brain had trained itself to
         spotlight the differences, his early teaching award, my still-pending
-        paper; his polished lecture slides, and my half-finished module. Meanwhile,
-        it ignored the countless ways I'd grown: the gratitude from students I'd
-        mentored, the late-night breakthrough when I finally refactored that
-        monstrosity of a function, the quiet confidence I felt when I solved a
-        problem that had stumped me for days.
+        paper; his polished lecture slides, and my half-finished module.
+        Meanwhile, it ignored the countless ways I'd grown: the gratitude from
+        students I'd mentored, the late-night breakthrough when I finally
+        refactored that monstrosity of a function, the quiet confidence I felt
+        when I solved a problem that had stumped me for days.
         <br />
         <br />
         When I became a supplemental instructor, I watched this cycle unfold in
         real time. I'd stand before a room full of eager Computer Science
         students, explaining a tricky concept, only to see the doubt flicker
-        across their eyes. “<em>I'm not smart enough,</em>” they'd think. But that's
-        simply not true. Many of us, especially those of us between 18 and 24,
-        are still discovering who we are and where we want to go. Life isn't a
-        sprint, it's a marathon, and each of us sets our own pace.
+        across their eyes. “<em>I'm not smart enough,</em>” they'd think. But
+        that's simply not true. Many of us, especially those of us between 18
+        and 24, are still discovering who we are and where we want to go. Life
+        isn't a sprint, it's a marathon, and each of us sets our own pace.
         <br />
         <br />
         Breaking free meant practicing compassion and curiosity with myself.
@@ -108,8 +111,8 @@ const Comparison = () => {
         Your journey will never mirror anyone else's, and that's its greatest
         gift. When you free yourself from the comparison trap, you unlock your
         own potential, your creativity, your resilience, and your authentic joy.
-        So the next time you feel that familiar lie of “<em>I'm not enough,</em>”
-        remember, you're not running someone else's race. You're weaving your
+        So the next time you feel that familiar lie of “<em>I'm not enough,</em>
+        ” remember, you're not running someone else's race. You're weaving your
         own story, one deliberate step at a time. Embrace each victory, lean
         into each lesson, and trust that your path, ever winding, uniquely yours
         will lead you exactly where you're meant to go.
@@ -164,11 +167,10 @@ const Comparison = () => {
         <br />
         By practicing these steps, pausing to acknowledge envy, cultivating
         gratitude, celebrating small wins, choosing supportive company, and
-        affirming your worth, you'll cultivate a deep well of self-love. And from
-        that place of inner confidence, there's no room left for comparison to
-        steal your joy. Have a blessed day 💚
-        <br />
-        - <span>&lt;Nate/&gt;</span> 
+        affirming your worth, you'll cultivate a deep well of self-love. And
+        from that place of inner confidence, there's no room left for comparison
+        to steal your joy. Have a blessed day 💚
+        <br />- <span>&lt;Nate/&gt;</span>
       </p>
     </div>
   );

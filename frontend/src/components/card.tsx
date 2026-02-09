@@ -1,22 +1,21 @@
-import React from "react";
-import "../styles/card.scss";
-import HTML from "/assets/icons/html.png";
-import CSS from "/assets/icons/css.png";
-import JS from "/assets/icons/js.png";
-import TS from "/assets/icons/ts.png";
-import RCT from "/assets/icons/react.png";
-import SASS from "/assets/icons/sass.png";
-import BS from "/assets/icons/bootstrap.png";
+import React from 'react';
+import '../styles/card.scss';
+import HTML from '/assets/icons/html.png';
+import CSS from '/assets/icons/css.png';
+import JS from '/assets/icons/js.png';
+import TS from '/assets/icons/ts.png';
+import RCT from '/assets/icons/react.png';
+import SASS from '/assets/icons/sass.png';
+import BS from '/assets/icons/bootstrap.png';
 
-import DB from "/assets/icons/db.png";
-import NODE from "/assets/icons/node.png";
-import PY from "/assets/icons/python.png";
+import DB from '/assets/icons/db.png';
+import NODE from '/assets/icons/node.png';
+import PY from '/assets/icons/python.png';
 
-import XD from "/assets/icons/xd.png";
-import FIG from "/assets/icons/figma.png";
-import BASH from "/assets/icons/gnu-bash.png";
-import LINUX from "/assets/icons/linux.png";
-
+import XD from '/assets/icons/xd.png';
+import FIG from '/assets/icons/figma.png';
+import BASH from '/assets/icons/gnu-bash.png';
+import LINUX from '/assets/icons/linux.png';
 
 // defining the Image path for imports
 interface ImagePath {

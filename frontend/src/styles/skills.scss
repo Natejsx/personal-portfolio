@@ -1,27 +1,27 @@
-@use "./plug" as p;
+@use './plug' as p;
 
 #skills {
-    height: auto;
-    margin-top: 2rem;
+  height: auto;
+  margin-top: 2rem;
+  background-color: p.$accent-second-bg;
+
+  .skills-header {
+    // border: 1px solid red;
+    height: 10vh;
+    @include p.flexCenter;
+    font-weight: 400;
+    font-size: 50px;
     background-color: p.$accent-second-bg;
+    color: p.$main-color;
+  }
 
-    .skills-header {
-        // border: 1px solid red;
-        height: 10vh;
-        @include p.flexCenter;
-        font-weight: 400;
-        font-size: 50px;
-        background-color: p.$accent-second-bg;
-        color: p.$main-color;
-    }
-
-    .skills-wrapper {
-        height: auto;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 60px;
-        padding: 60px;
-    }
-}   
+  .skills-wrapper {
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    padding: 60px;
+  }
+}

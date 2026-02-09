@@ -1,4 +1,4 @@
-@use "./plug" as p;
+@use './plug' as p;
 
 .blog-post-card {
   display: flex;
@@ -7,7 +7,9 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   height: 100%;
 
   &:hover {

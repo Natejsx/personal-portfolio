@@ -1,4 +1,4 @@
-@use "./plug" as p;
+@use './plug' as p;
 
 #about {
   height: auto;
@@ -7,7 +7,6 @@
   gap: 2rem;
   background-color: p.$accent-second-bg;
   padding-bottom: 2rem;
-
 
   .about-container {
     width: 100%;

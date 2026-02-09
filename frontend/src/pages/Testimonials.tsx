@@ -1,11 +1,10 @@
-import React from "react";
-import { TestimonialCard } from "../components/TestimonialCard";
-import "../styles/Testimonials.scss";
-import { Nav } from "../components/nav";
-import { testimonials } from "../data/testinomial";
+import React from 'react';
+import { TestimonialCard } from '../components/TestimonialCard';
+import '../styles/Testimonials.scss';
+import { Nav } from '../components/nav';
+import { testimonials } from '../data/testinomial';
 
 export const Testimonials: React.FC = () => {
-
   return (
     <div className="testimonials-container">
       <Nav />

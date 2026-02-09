@@ -1,64 +1,63 @@
-@use "./plug" as p;
+@use './plug' as p;
 
 .skills-container {
-    height: 450px;
-    width: 400px;
-    box-shadow: p.$boxShadow;
-    border-radius: p.$soft-button-bdr;
-    background-color: p.$primary-bg;
+  height: 450px;
+  width: 400px;
+  box-shadow: p.$boxShadow;
+  border-radius: p.$soft-button-bdr;
+  background-color: p.$primary-bg;
 
-    .card-header {
-        height: 10%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 500;
-        font-size: 24px;
-        position: relative;
-        color: p.$accent-second-bg;
-    }
+  .card-header {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 24px;
+    position: relative;
+    color: p.$accent-second-bg;
+  }
 
-    hr {
-        width: 90%;
-        margin: auto;
-        border: 1px solid black;
-    }
+  hr {
+    width: 90%;
+    margin: auto;
+    border: 1px solid black;
+  }
 
-    .logo-container {
-        // border: 2px solid blue;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 20px;
-    }
+  .logo-container {
+    // border: 2px solid blue;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+  }
 
-    .img-container {
-        // border: 1px solid red;
-        height: 100px;
-        width: 100px;
-        margin: auto;
-        
-        img {
-            height: 100%;
-            width: 100%;
-        }
+  .img-container {
+    // border: 1px solid red;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+
+    img {
+      height: 100%;
+      width: 100%;
     }
+  }
 }
-
 
 // Mobile Screen
 @media screen and (max-width: 468px) {
-    .skills-container {
-        width: 350px;
-        height: auto;
-    }    
+  .skills-container {
+    width: 350px;
+    height: auto;
+  }
 }
 
 // Tiny Mobile Screens
 @media screen and (max-width: 386px) {
-    .skills-container {
-        width: 300px;
-    }    
+  .skills-container {
+    width: 300px;
+  }
 }

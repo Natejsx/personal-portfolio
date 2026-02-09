@@ -1,4 +1,4 @@
-@use "./plug" as p;
+@use './plug' as p;
 
 .contact-container {
   background-color: p.$accent-second-bg;
@@ -29,7 +29,7 @@
       position: relative;
 
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -10px;
         left: 0;

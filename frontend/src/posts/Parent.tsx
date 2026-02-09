@@ -79,7 +79,7 @@ const Parenthood = () => {
         religion, politics, or even worldview.
         <br />
         <br />
-        And the real question is:{" "}
+        And the real question is:{' '}
         <em>
           would you still love them the same? Or would resentment quietly take
           root?
@@ -270,8 +270,9 @@ const Parenthood = () => {
         <br />
         <br />
         But fear, when it leads to parenting, creates distance. Love should be
-        the anchor, not fear. Fear narrows vision. Love widens it. Fear asks,
-        “<em>How do I stop this?</em>” Love asks, “<em>How do I stay connected?</em>”
+        the anchor, not fear. Fear narrows vision. Love widens it. Fear asks, “
+        <em>How do I stop this?</em>” Love asks, “
+        <em>How do I stay connected?</em>”
         <br />
         <br />
         Parents don't need to abandon their values to love unconditionally. They
@@ -279,10 +280,13 @@ const Parenthood = () => {
         you're a parent right now, or hope to be one day, I think this is worth
         asking yourself honestly:
         <br />
-        <br />
-        “<em>If your child grows into someone different than you imagined, how will
-        you meet them? With curiosity or resistance? With openness or
-        disappointment? With love, or with conditions?</em>”
+        <br />“
+        <em>
+          If your child grows into someone different than you imagined, how will
+          you meet them? With curiosity or resistance? With openness or
+          disappointment? With love, or with conditions?
+        </em>
+        ”
         <br />
         <br />
         Because long after careers, beliefs, achievements, and expectations

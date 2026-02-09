@@ -1,4 +1,4 @@
-@use "./plug" as p;
+@use './plug' as p;
 
 #blog {
   min-height: 100vh;
@@ -16,7 +16,7 @@
     padding-top: 6rem;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -199,7 +199,11 @@
     justify-content: center;
     padding: 4rem 2rem;
     text-align: center;
-    background: linear-gradient(135deg, rgba(74, 191, 102, 0.05), rgba(58, 153, 79, 0.05));
+    background: linear-gradient(
+      135deg,
+      rgba(74, 191, 102, 0.05),
+      rgba(58, 153, 79, 0.05)
+    );
     border-radius: 16px;
     border: 2px dashed rgba(74, 191, 102, 0.3);
     min-height: 300px;
@@ -282,7 +286,7 @@
         max-width: 600px;
         margin: 0 auto;
 
-        input[type="email"] {
+        input[type='email'] {
           flex: 1;
           padding: 1rem 1.5rem;
           border-radius: 50px;
@@ -300,7 +304,7 @@
           }
         }
 
-        input[type="submit"] {
+        input[type='submit'] {
           padding: 1rem 2rem;
           border-radius: 50px;
           border: none;
@@ -327,7 +331,11 @@
   margin: 3rem 0;
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(135deg, rgba(74, 191, 102, 0.03), rgba(58, 153, 79, 0.03));
+  background: linear-gradient(
+    135deg,
+    rgba(74, 191, 102, 0.03),
+    rgba(58, 153, 79, 0.03)
+  );
   border-radius: 12px;
   border: 1px solid rgba(74, 191, 102, 0.1);
 
@@ -388,7 +396,11 @@
 .author-bio {
   margin: 3rem 0 2rem;
   padding: 2.5rem;
-  background: linear-gradient(135deg, rgba(74, 191, 102, 0.05), rgba(58, 153, 79, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(74, 191, 102, 0.05),
+    rgba(58, 153, 79, 0.05)
+  );
   border-radius: 16px;
   border: 2px solid rgba(74, 191, 102, 0.15);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -404,7 +416,11 @@
       i {
         font-size: 5rem;
         color: p.$main-color;
-        background: linear-gradient(135deg, rgba(74, 191, 102, 0.1), rgba(58, 153, 79, 0.1));
+        background: linear-gradient(
+          135deg,
+          rgba(74, 191, 102, 0.1),
+          rgba(58, 153, 79, 0.1)
+        );
         border-radius: 50%;
         padding: 1rem;
         border: 3px solid p.$muted-green;
@@ -535,8 +551,8 @@
         form {
           flex-direction: column;
 
-          input[type="email"],
-          input[type="submit"] {
+          input[type='email'],
+          input[type='submit'] {
             width: 100%;
           }
         }

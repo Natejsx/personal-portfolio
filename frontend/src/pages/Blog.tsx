@@ -1,11 +1,11 @@
-import React, { Suspense } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Nav } from "../components/nav";
-import "../styles/Blog.scss";
-import "../styles/blogPost.scss";
-import BlogPostCard from "../components/BlogPostCard";
-import { Posts } from "@/data/post"; 
-import logo from "../../public/assets/images/logo.jpg";
+import React, { Suspense } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { Nav } from '../components/nav';
+import '../styles/Blog.scss';
+import '../styles/blogPost.scss';
+import BlogPostCard from '../components/BlogPostCard';
+import { Posts } from '@/data/post';
+import logo from '../../public/assets/images/logo.jpg';
 
 export const BlogBanner = () => {
   return (
@@ -37,7 +37,7 @@ interface BlogFilterProps {
 export const BlogFilter: React.FC<BlogFilterProps> = ({
   onSearch,
   onCategoryFilter,
-  activeCategory
+  activeCategory,
 }) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onSearch(event.target.value);
@@ -57,15 +57,15 @@ export const BlogFilter: React.FC<BlogFilterProps> = ({
       </div>
       <div className="filter-bottom">
         <button
-          className={activeCategory === "All" ? "active" : ""}
-          onClick={() => onCategoryFilter("All")}
+          className={activeCategory === 'All' ? 'active' : ''}
+          onClick={() => onCategoryFilter('All')}
         >
           All
         </button>
         {Filters.map((element, index) => (
           <button
             key={index}
-            className={activeCategory === element ? "active" : ""}
+            className={activeCategory === element ? 'active' : ''}
             onClick={() => onCategoryFilter(element)}
           >
             {element}
@@ -95,30 +95,28 @@ export const BlogNewsLetter = () => {
 };
 
 const Filters = [
-  "Personal",
-  "Mental Health",
-  "Philosophy",
-  "Self-Improvement",
-  "Relationships",
-  "Career",
-  "Web Development",
-  "Programming",
-  "React",
-  "TypeScript",
+  'Personal',
+  'Mental Health',
+  'Philosophy',
+  'Self-Improvement',
+  'Relationships',
+  'Career',
+  'Web Development',
+  'Programming',
+  'React',
+  'TypeScript',
 ];
 
 export const Blog = () => {
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [activeCategory, setActiveCategory] = React.useState("All");
+  const [searchTerm, setSearchTerm] = React.useState('');
+  const [activeCategory, setActiveCategory] = React.useState('All');
 
   const filteredPosts = React.useMemo(() => {
     let results = Posts;
 
     // Filter by category
-    if (activeCategory !== "All") {
-      results = results.filter((p) =>
-        p.tags.some((t) => t === activeCategory)
-      );
+    if (activeCategory !== 'All') {
+      results = results.filter((p) => p.tags.some((t) => t === activeCategory));
     }
 
     // Filter by search term
@@ -138,7 +136,7 @@ export const Blog = () => {
   const handleSearch = (term: string) => setSearchTerm(term);
   const handleCategoryFilter = (category: string) => {
     setActiveCategory(category);
-    setSearchTerm(""); // Clear search when changing category
+    setSearchTerm(''); // Clear search when changing category
   };
 
   return (
@@ -175,10 +173,12 @@ export const Blog = () => {
                   ? `No posts matching "${searchTerm}"`
                   : `No posts in category "${activeCategory}"`}
               </p>
-              <button onClick={() => {
-                setSearchTerm("");
-                setActiveCategory("All");
-              }}>
+              <button
+                onClick={() => {
+                  setSearchTerm('');
+                  setActiveCategory('All');
+                }}
+              >
                 Clear Filters
               </button>
             </div>
@@ -198,7 +198,7 @@ export const Blog = () => {
 // };
 
 export const BlogPostDetails = () => {
-  const { slug = "" } = useParams<{ slug: string }>();
+  const { slug = '' } = useParams<{ slug: string }>();
   const post = Posts.find((p) => p.slug === slug);
 
   React.useEffect(() => {
@@ -212,13 +212,15 @@ export const BlogPostDetails = () => {
     return (
       <div className="blog-loading">
         <h2>Post not found</h2>
-        <Link to="/blog" className="back-link">Return to Blog</Link>
+        <Link to="/blog" className="back-link">
+          Return to Blog
+        </Link>
       </div>
     );
   }
 
   const Content = post.component;
-  const primaryCategory = post.tags[0] || "Article";
+  const primaryCategory = post.tags[0] || 'Article';
 
   return (
     <div className="modern-blog-page">
@@ -277,7 +279,11 @@ export const BlogPostDetails = () => {
         {/* Article Content */}
         <article className="blog-article-content">
           <div className="content-card">
-            <Suspense fallback={<div className="content-loading">Loading article...</div>}>
+            <Suspense
+              fallback={
+                <div className="content-loading">Loading article...</div>
+              }
+            >
               <Content />
             </Suspense>
           </div>
@@ -309,8 +315,10 @@ export const BlogPostDetails = () => {
             Read Next
           </h3>
           <div className="related-posts-grid">
-            {Posts.filter((p) =>
-              p.tags.some(tag => post.tags.includes(tag)) && p.slug !== post.slug
+            {Posts.filter(
+              (p) =>
+                p.tags.some((tag) => post.tags.includes(tag)) &&
+                p.slug !== post.slug
             )
               .slice(0, 3)
               .map((relatedPost) => (
@@ -323,11 +331,17 @@ export const BlogPostDetails = () => {
                     <img src={relatedPost.image} alt={relatedPost.title} />
                   </div>
                   <div className="related-post-content">
-                    <span className="related-post-category">{relatedPost.tags[0]}</span>
+                    <span className="related-post-category">
+                      {relatedPost.tags[0]}
+                    </span>
                     <h4 className="related-post-title">{relatedPost.title}</h4>
-                    <p className="related-post-excerpt">{relatedPost.description}</p>
+                    <p className="related-post-excerpt">
+                      {relatedPost.description}
+                    </p>
                     <div className="related-post-footer">
-                      <span className="related-post-time">{relatedPost.readingTime} min read</span>
+                      <span className="related-post-time">
+                        {relatedPost.readingTime} min read
+                      </span>
                       <i className="bx bx-right-arrow-alt"></i>
                     </div>
                   </div>

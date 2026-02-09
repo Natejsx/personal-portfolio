@@ -24,9 +24,9 @@ const Love = () => {
         <em>I love you</em>” felt infinite. I had no trust issues, no doubts, no
         reason to protect myself. I was young, open, and all-in. I loved my
         girlfriend at the time with everything I had. I wrote deeply about love
-        in that essay because I was so excited to have finally
-        understood what people meant when they told me "
-        <em>wait until you're in love</em>". or so I thought.
+        in that essay because I was so excited to have finally understood what
+        people meant when they told me "<em>wait until you're in love</em>". or
+        so I thought.
         <br />
         <br />
         Then December 2019 came. I went on vacation for a week, and when I came
@@ -52,7 +52,7 @@ const Love = () => {
         And that's when I started asking harder questions. How do you learn to
         trust someone again after they've lied to you? or <em>
           Should you?
-        </em>{" "}
+        </em>{' '}
         Because once trust is broken, it doesn't just live in that one moment,
         it bleeds into everything else. It stains the past, making you question
         what was ever real, and it shadows the future, whispering doubt into
@@ -96,12 +96,12 @@ const Love = () => {
         confusion, there's still something pure about choosing to believe again.
         <br />
         <br />
-        As for me, I don't know if I'll ever be <em>in love again</em>. I can love, I
-        know how to care deeply, how to show up for people, how to see beauty in
-        their smallest details. I can listen, I can nurture, I can give. That
-        part of me never left. But to be <em>in love</em>, that effortless
-        surrender, that blind faith in something fragile, that's different. It's
-        something I've grown to accept may never happen for me.
+        As for me, I don't know if I'll ever be <em>in love again</em>. I can
+        love, I know how to care deeply, how to show up for people, how to see
+        beauty in their smallest details. I can listen, I can nurture, I can
+        give. That part of me never left. But to be <em>in love</em>, that
+        effortless surrender, that blind faith in something fragile, that's
+        different. It's something I've grown to accept may never happen for me.
         <br />
         <br />
         Maybe it's because I've seen what love can do when it turns out bad. How
@@ -134,7 +134,7 @@ const Love = () => {
         hold meaning on their own.
         <br />
         <br />
-        Deep down, I think people who say this often have{" "}
+        Deep down, I think people who say this often have{' '}
         <em>known love too deeply</em>. You've felt it, lost it, and watched it
         change you in ways words can't fully explain. So part of you steps back
         and says, “
@@ -172,9 +172,9 @@ const Love = () => {
         never promised to me.
         <br />
         <br />
-        Maybe that's not sadness, maybe that's freedom, and maybe that is its own kind of peace.
-        <br />
-        - <span>&lt;Nate/&gt;</span>
+        Maybe that's not sadness, maybe that's freedom, and maybe that is its
+        own kind of peace.
+        <br />- <span>&lt;Nate/&gt;</span>
       </p>
     </div>
   );

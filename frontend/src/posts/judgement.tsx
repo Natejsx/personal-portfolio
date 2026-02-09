@@ -23,10 +23,11 @@ const Judgement = () => {
         logical approach to life. My mind often clashed with doctrines that
         couldn't be proven or fully explained, leading to a persistent inner
         conflict. I found myself under constant persecution for not 'believing
-        the right way,' as defined by those around me. When I had problems or challenges, the most common response was
-        always, “Pray about it.” While spoken with a good heart, this advice left me
-        yearning for tangible solutions, a concrete path forward rather than
-        more questions that deepened my uncertainty.
+        the right way,' as defined by those around me. When I had problems or
+        challenges, the most common response was always, “Pray about it.” While
+        spoken with a good heart, this advice left me yearning for tangible
+        solutions, a concrete path forward rather than more questions that
+        deepened my uncertainty.
         <br />
         <br />
         In an effort to secure my parents' pride and approval, I adopted a
@@ -63,11 +64,14 @@ const Judgement = () => {
         <br />
         <br />
         In response to this personal awakening, I started on a project close to
-        my heart: a mental health web app called <a href="https://github.com/Simpleboi/JournalXP" target="_blank">JournalXP</a>. This app is designed
-        to support emotional awareness and growth in a game-like manner, providing
-        a space where thoughts and feelings can be explored and understood. The
-        source code is available on GitHub for anyone who might be curious or
-        inspired to learn more about it.
+        my heart: a mental health web app called{' '}
+        <a href="https://github.com/Simpleboi/JournalXP" target="_blank">
+          JournalXP
+        </a>
+        . This app is designed to support emotional awareness and growth in a
+        game-like manner, providing a space where thoughts and feelings can be
+        explored and understood. The source code is available on GitHub for
+        anyone who might be curious or inspired to learn more about it.
         <br />
         <br />
         Today, I've reached a place where I no longer let the opinions and
@@ -89,14 +93,13 @@ const Judgement = () => {
         then build the biggest and most meaningful company the world's ever
         seen. If your dream is to be a garbage collector, then be the most
         respected and proud garbage collector out there. Your value isn't tied
-        to the title, it's tied to your heart and the effort you give. This
-        post might not be about computer science or programming, but it felt
+        to the title, it's tied to your heart and the effort you give. This post
+        might not be about computer science or programming, but it felt
         important enough to share. So if you're reading this, thank you. And I
         hope today brings you peace, purpose, and maybe even a little joy. Stay
         blessed 💚
         <br />
-        <br />
-        - <span>&lt;Nate&gt;</span>
+        <br />- <span>&lt;Nate&gt;</span>
       </p>
     </div>
   );

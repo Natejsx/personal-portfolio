@@ -1,5 +1,5 @@
-import "../styles/banner.scss";
-import { Link } from "react-router-dom";
+import '../styles/banner.scss';
+import { Link } from 'react-router-dom';
 
 export const BannerBTN: React.FC = () => {
   return (

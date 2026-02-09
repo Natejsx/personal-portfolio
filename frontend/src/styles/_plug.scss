@@ -1,16 +1,14 @@
-
 // Colors Pallette
-$light-text: #F6F3EC;
-$primary-bg: #ECE4DA;
-$bright-two: #B9A590;
-$bright-three: #574C3F;
-$text-color: #36302A;
+$light-text: #f6f3ec;
+$primary-bg: #ece4da;
+$bright-two: #b9a590;
+$bright-three: #574c3f;
+$text-color: #36302a;
 
 // New Color Pallette
-$main-color: #4ABF66;
-$dark-green: #3A994F;
-$muted-green: #A8D8BA;
-
+$main-color: #4abf66;
+$dark-green: #3a994f;
+$muted-green: #a8d8ba;
 
 // Accent colors
 $accent-main: #333333;
@@ -18,7 +16,7 @@ $accent-second-bg: #444444;
 
 // Links
 $unvisited: #4444e9;
-$visited: #551A8B;
+$visited: #551a8b;
 
 // Border Radius
 $card-bdr: 10px;
@@ -41,19 +39,16 @@ $laptopSM: 968px;
 $tablet: 768px;
 $mobile: 468px;
 
-
 // box-shadow
 $boxShadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  
-
 
 @mixin flexCenter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 // function to convert px units to rem units
 @function rem($px, $base-font-size: 16px) {
-    @return calc($px / $base-font-size) * 1rem;
+  @return calc($px / $base-font-size) * 1rem;
 }

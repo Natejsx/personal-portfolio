@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import "../styles/contact.scss";
-import { Nav } from "../components/nav";
+import React, { useState } from 'react';
+import '../styles/contact.scss';
+import { Nav } from '../components/nav';
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    message: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
   });
 
   const [errors, setErrors] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    message: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData({
@@ -33,7 +33,7 @@ export const ContactForm = () => {
     if (errors[name as keyof typeof errors]) {
       setErrors({
         ...errors,
-        [name]: "",
+        [name]: '',
       });
     }
   };
@@ -43,25 +43,25 @@ export const ContactForm = () => {
     const newErrors = { ...errors };
 
     if (!formData.firstName.trim()) {
-      newErrors.firstName = "First name is required";
+      newErrors.firstName = 'First name is required';
       isValid = false;
     }
 
     if (!formData.lastName.trim()) {
-      newErrors.lastName = "Last name is required";
+      newErrors.lastName = 'Last name is required';
       isValid = false;
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = 'Email is required';
       isValid = false;
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
+      newErrors.email = 'Please enter a valid email address';
       isValid = false;
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
+      newErrors.message = 'Message is required';
       isValid = false;
     }
 
@@ -76,10 +76,10 @@ export const ContactForm = () => {
       setIsSubmitting(true);
 
       try {
-        const response = await fetch("https://formspree.io/f/xovkagwq", {
-          method: "POST",
+        const response = await fetch('https://formspree.io/f/xovkagwq', {
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             First_name: formData.firstName,
@@ -92,10 +92,10 @@ export const ContactForm = () => {
         if (response.ok) {
           setSubmitSuccess(true);
           setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            message: "",
+            firstName: '',
+            lastName: '',
+            email: '',
+            message: '',
           });
 
           // Reset success message after 5 seconds
@@ -104,7 +104,7 @@ export const ContactForm = () => {
           }, 5000);
         }
       } catch (error) {
-        console.error("Error submitting form:", error);
+        console.error('Error submitting form:', error);
       } finally {
         setIsSubmitting(false);
       }
@@ -125,7 +125,7 @@ export const ContactForm = () => {
             <span>natejsx@gmail.com</span>
           </div>
           <div className="contact-item">
-            <i className='bx bxl-instagram'></i>
+            <i className="bx bxl-instagram"></i>
             <span>@nate.jsx</span>
           </div>
           <div className="contact-item">
@@ -153,7 +153,7 @@ export const ContactForm = () => {
                 required
                 value={formData.firstName}
                 onChange={handleChange}
-                className={errors.firstName ? "error" : ""}
+                className={errors.firstName ? 'error' : ''}
               />
               {errors.firstName && (
                 <span className="error-message">{errors.firstName}</span>
@@ -169,7 +169,7 @@ export const ContactForm = () => {
                 required
                 value={formData.lastName}
                 onChange={handleChange}
-                className={errors.lastName ? "error" : ""}
+                className={errors.lastName ? 'error' : ''}
               />
               {errors.lastName && (
                 <span className="error-message">{errors.lastName}</span>
@@ -186,7 +186,7 @@ export const ContactForm = () => {
               placeholder="example@something.com"
               value={formData.email}
               onChange={handleChange}
-              className={errors.email ? "error" : ""}
+              className={errors.email ? 'error' : ''}
             />
             {errors.email && (
               <span className="error-message">{errors.email}</span>
@@ -202,7 +202,7 @@ export const ContactForm = () => {
               required
               value={formData.message}
               onChange={handleChange}
-              className={errors.message ? "error" : ""}
+              className={errors.message ? 'error' : ''}
             ></textarea>
             {errors.message && (
               <span className="error-message">{errors.message}</span>
@@ -210,7 +210,7 @@ export const ContactForm = () => {
           </label>
 
           <button type="submit" className="submit" disabled={isSubmitting}>
-            {isSubmitting ? "Sending..." : "Send Message"}
+            {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>
         </form>
       </div>

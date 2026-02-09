@@ -1,6 +1,6 @@
-import React from "react";
-import "../styles/skills.scss";
-import { SkillCard } from "../components/SkillCard";
+import React from 'react';
+import '../styles/skills.scss';
+import { SkillCard } from '../components/SkillCard';
 
 export const Skills: React.FC = () => {
   return (

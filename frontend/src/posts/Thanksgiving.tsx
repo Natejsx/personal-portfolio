@@ -97,38 +97,52 @@ const Thanksgiving = () => {
         made it this far. Let me rest.
         <br />
         <br />
-        This year, I'm grateful for so much: 
+        This year, I'm grateful for so much:
         <br />
         <br />
-        My brother and sister, the ones who
-        have shown me what resilience and unconditional love look like, even in the hardest moments. 
+        My brother and sister, the ones who have shown me what resilience and
+        unconditional love look like, even in the hardest moments.
         <br />
         <br />
-        My family, who refused to give up on me, even when
-        I pushed them away. Their patience and compassion have been a lifeline more times than they know. 
+        My family, who refused to give up on me, even when I pushed them away.
+        Their patience and compassion have been a lifeline more times than they
+        know.
         <br />
         <br />
-        My girlfriend, who has stood by me through
-        some of the darkest parts of this year. I'm grateful for her love, her support, and the way she reminds me that I'm worth fighting for, even on the days I struggle to believe it myself. 
+        My girlfriend, who has stood by me through some of the darkest parts of
+        this year. I'm grateful for her love, her support, and the way she
+        reminds me that I'm worth fighting for, even on the days I struggle to
+        believe it myself.
         <br />
         <br />
-        The late-night conversations with friends that reminded me I'm not alone. I'm thankful for the people in my life who bring comfort, laughter, and warmth, the friends who make
-        life worth living. 
+        The late-night conversations with friends that reminded me I'm not
+        alone. I'm thankful for the people in my life who bring comfort,
+        laughter, and warmth, the friends who make life worth living.
         <br />
         <br />
-        The peaceful moments that come after long, draining
-        days, the quiet pockets of stillness where I can finally breathe and feel grounded again. The small, simple joys like music that lifts me up, laughter that softens the heaviness, good food shared with people I
-        love, and slow, quiet mornings that feel like a reset. 
+        The peaceful moments that come after long, draining days, the quiet
+        pockets of stillness where I can finally breathe and feel grounded
+        again. The small, simple joys like music that lifts me up, laughter that
+        softens the heaviness, good food shared with people I love, and slow,
+        quiet mornings that feel like a reset.
         <br />
         <br />
-        And above all, I'm grateful for the support from people who genuinely want to see me grow, heal, and succeed. Their belief in me has carried me further than
-        they realize.
+        And above all, I'm grateful for the support from people who genuinely
+        want to see me grow, heal, and succeed. Their belief in me has carried
+        me further than they realize.
         <br />
         <br />
-        As we step into December and eventually into a new year, I want to carry this mindset with me, that gratitude isn't a holiday, it's a practice. It's something I want to hold onto on ordinary days, not just the special ones. And if you're reading this, I hope you find something today, even something small, to be grateful for, even if life feels heavy right now.
+        As we step into December and eventually into a new year, I want to carry
+        this mindset with me, that gratitude isn't a holiday, it's a practice.
+        It's something I want to hold onto on ordinary days, not just the
+        special ones. And if you're reading this, I hope you find something
+        today, even something small, to be grateful for, even if life feels
+        heavy right now.
         <br />
         <br />
-        Thanksgiving doesn't have to be perfect to be meaningful. It just has to be real. Happy Thanksgiving! may this season bring you all the warmth, healing, and peace you desire. 🧡🍂
+        Thanksgiving doesn't have to be perfect to be meaningful. It just has to
+        be real. Happy Thanksgiving! may this season bring you all the warmth,
+        healing, and peace you desire. 🧡🍂
       </p>
     </div>
   );

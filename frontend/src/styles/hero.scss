@@ -1,4 +1,4 @@
-@use "./plug" as p;
+@use './plug' as p;
 
 .hero-container {
   position: relative;
@@ -11,7 +11,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("../../assets/images/hero-banner.jpg");
+    background: url('../../assets/images/hero-banner.jpg');
     background-position: center;
     background-size: cover;
     filter: brightness(0.4);

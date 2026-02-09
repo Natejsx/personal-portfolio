@@ -7,10 +7,10 @@ const ReactUpdate = () => {
         frameworks, just the classic trio of HTML, CSS, and JavaScript, with
         everything in its own file and structure. To give you a sense of where I
         started, feel free to check out the code for one of my earliest
-        projects, a simple{" "}
+        projects, a simple{' '}
         <a href="https://github.com/Simpleboi/To-do" target="_blank">
           To-Do
-        </a>{" "}
+        </a>{' '}
         app from April 2024. It's beginner work for sure, and any experienced
         developer might get a chuckle out of it, but that's the beauty of
         growth. Like anyone improving their craft, I kept practicing and

@@ -1,4 +1,4 @@
-@use "./plug" as p;
+@use './plug' as p;
 
 .testimonial-card {
   background-color: white;
@@ -6,7 +6,9 @@
   padding: 2rem;
   margin-bottom: 2rem;
   box-shadow: p.$boxShadow;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

@@ -76,7 +76,7 @@ const Betrayal = () => {
         explain, insisting it was nothing, just a one-time mistake. Against all
         reason, against the screaming voice in my head, I chose to stay. I loved
         her too much, or maybe I just didn't want to believe who she had become.
-        That night was a blur. We stayed up late, me desperately asking{" "}
+        That night was a blur. We stayed up late, me desperately asking{' '}
         <em>why</em>? How could she betray me like this? She swore it was a
         one-time mistake, that nothing had happened between her and Thomas. She
         reassured me that Thomas would be removed and she'd never go back to
@@ -144,7 +144,7 @@ const Betrayal = () => {
         <br />
         It took time, but I've learned to accept what happened, I learned that
         pain can either break you or teach you. For me, it did both. It broke me
-        down to the lowest I've ever been, but it also taught me what love is{" "}
+        down to the lowest I've ever been, but it also taught me what love is{' '}
         <em>not</em>. It showed me the importance of self-respect, of
         boundaries, of listening to the red flags instead of silencing them. And
         most importantly, it taught me that forgiveness doesn't always mean
@@ -186,8 +186,8 @@ const Betrayal = () => {
         <br />
         Healing doesn't come from demanding answers or replaying what went wrong
         a hundred times in your head. It comes from turning the focus back to
-        yourself. Ask: <em>What do I need to feel safe again?</em>{" "}
-        <em>What boundaries do I need to protect my heart moving forward?</em>{" "}
+        yourself. Ask: <em>What do I need to feel safe again?</em>{' '}
+        <em>What boundaries do I need to protect my heart moving forward?</em>{' '}
         Instead of trying to control the betrayer's actions, you reclaim control
         by setting standards for your own life. Sometimes that means walking
         away, and as painful as it is, walking away is often the most powerful
@@ -209,16 +209,19 @@ const Betrayal = () => {
         their sake; you forgive for your own peace of mind. It's the choice to
         stop letting their actions define your worth or dictate your future. In
         time, betrayal becomes less of a wound and more of a scar, a reminder
-        not of your pain, but of your strength to overcome it, And you're wiser now because of it. 
-        You are stronger than you think.
+        not of your pain, but of your strength to overcome it, And you're wiser
+        now because of it. You are stronger than you think.
         <br />
         <br />
-        Out of respect for the dignity and privacy of those involved, the names <em>Lucia</em> and <em>Thomas</em> are not their real names. Some aspects of the story have also been adjusted to safeguard their identities. And if you're reading this while
-        carrying the weight of your own betrayal, I want you to hear this
-        clearly: you are stronger than you think. Pain may bend you, but it will
-        not break you. What feels unbearable today will one day become the very
-        proof of your resilience. You will rise, you will heal, and you will
-        discover a strength within yourself you never knew you had. Have a blessed day!
+        Out of respect for the dignity and privacy of those involved, the names{' '}
+        <em>Lucia</em> and <em>Thomas</em> are not their real names. Some
+        aspects of the story have also been adjusted to safeguard their
+        identities. And if you're reading this while carrying the weight of your
+        own betrayal, I want you to hear this clearly: you are stronger than you
+        think. Pain may bend you, but it will not break you. What feels
+        unbearable today will one day become the very proof of your resilience.
+        You will rise, you will heal, and you will discover a strength within
+        yourself you never knew you had. Have a blessed day!
       </p>
     </div>
   );
