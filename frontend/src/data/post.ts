@@ -225,7 +225,7 @@ export const Posts: PostMeta[] = [
     title: 'The Responsibility of Loving Your Child',
     description:
       'This post examines parenthood through the lens of love, identity, and expectation. Questioning what children truly need from the people raising them.',
-    date: 'January 14th, 2025',
+    date: 'January 14th, 2026',
     tags: ['Personal', 'Mental Health', 'Philosophy'],
     image: '/assets/images/parenthood.jpg',
     readingTime: 11,
@@ -236,7 +236,7 @@ export const Posts: PostMeta[] = [
     title: 'Waiting for the Storm to Apologize',
     description:
       'This post explores the quiet cost of staying loyal to people who hurt us, and the complicated line between love, obligation, and self-preservation. Through one story, it asks when family stops being a refuge and starts becoming a wound.',
-    date: 'February 5th, 2025',
+    date: 'February 5th, 2026',
     tags: ['Personal', 'Mental Health', 'Philosophy'],
     image: '/assets/images/family.jpg',
     readingTime: 12,
@@ -247,7 +247,7 @@ export const Posts: PostMeta[] = [
     title: 'Grace Is Not Conditional',
     description:
       'This post is about what happens when beliefs become conditions, and how easily compassion can be replaced by judgment. It is a reminder that love does not require agreement, only humility.',
-    date: 'February 8th, 2025',
+    date: 'February 8th, 2026',
     tags: ['Personal', 'Mental Health', 'Philosophy'],
     image: '/assets/images/bethany.jpg',
     readingTime: 15,
