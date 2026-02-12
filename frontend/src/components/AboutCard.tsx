@@ -85,7 +85,7 @@ export const AboutCard: React.FC = () => {
             <h2>Resume / CV</h2>
             <p>Want to learn more about my experience and qualifications?</p>
             <a
-              href="/assets/resume/Resume-noNumber.pdf"
+              href="/assets/resume/Resume.pdf"
               download="Nathaniel_Paz_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
