@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/aboutCard.scss';
 import PFP from '/assets/images/logo.jpg';
+import { WelcomeDate } from '@/utilities/Date';
 
 export const AboutCard: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ export const AboutCard: React.FC = () => {
           About <span>&lt;Me/&gt;</span>
         </h1>
         <p>
-          Good Morning👋🏽 My name is Nathaniel Paz, I'm a 22-year-old aspiring
+          {WelcomeDate()}👋🏽 My name is Nathaniel Paz, I'm a 22-year-old aspiring
           computer scientist and web developer with a passion for creating
           innovative web applications.
           <br />

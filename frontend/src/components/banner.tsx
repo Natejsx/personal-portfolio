@@ -1,5 +1,6 @@
 import '../styles/banner.scss';
 import { Link } from 'react-router-dom';
+import { WelcomeDate } from '@/utilities/Date';
 
 export const BannerBTN: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ export const Banner: React.FC<BannerProps> = () => {
   return (
     <header>
       <div className="banner-container">
-        <h2 className="banner-header">Good Morning!👋🏽</h2>
+        <h2 className="banner-header">{WelcomeDate()}!👋🏽</h2>
         <h1 className="banner-name">
           I'm <span>&lt;Nate/&gt;</span>
         </h1>
