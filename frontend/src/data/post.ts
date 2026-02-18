@@ -253,4 +253,15 @@ export const Posts: PostMeta[] = [
     readingTime: 15,
     component: React.lazy(() => import('../posts/Bethany')),
   },
+  {
+    slug: 'farmer',
+    title: "Where I'd find peace",
+    description:
+      'This post explores the tension between ambition and simplicity, between building software in a fast-moving world and craving a slower, quieter life. It’s a reflection on growth, peace, and the desire to one day wake up and be a farmer.',
+    date: 'February 8th, 2026',
+    tags: ['Personal', 'Mental Health', 'Philosophy'],
+    image: '/assets/images/farmer.jpg',
+    readingTime: 15,
+    component: React.lazy(() => import('../posts/Farmer')),
+  },
 ];
