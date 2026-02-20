@@ -264,4 +264,15 @@ export const Posts: PostMeta[] = [
     readingTime: 11,
     component: React.lazy(() => import('../posts/Farmer')),
   },
+  {
+    slug: 'rachel',
+    title: "In the Space Between Judgment and Grace",
+    description:
+      'This post tells the story of two friends who heard the same story but responded in completely different ways. It’s about grace versus certainty, loyalty versus control, and the kind of person I want to become when others are still growing.',
+    date: 'February 20th, 2026',
+    tags: ['Personal', 'Mental Health', 'Philosophy'],
+    image: '/assets/images/rachel.jpg',
+    readingTime: 11,
+    component: React.lazy(() => import('../posts/Rachel')),
+  },
 ];
