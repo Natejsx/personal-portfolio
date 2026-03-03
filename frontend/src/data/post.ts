@@ -257,7 +257,7 @@ export const Posts: PostMeta[] = [
     slug: 'farmer',
     title: "Where I'd find peace",
     description:
-      'This post explores the tension between ambition and simplicity, between building software in a fast-moving world and craving a slower, quieter life. It’s a reflection on growth, peace, and the desire to one day wake up and be a farmer.',
+      "This post explores the tension between ambition and simplicity, between building software in a fast-moving world and craving a slower, quieter life. It's a reflection on growth, peace, and the desire to one day wake up and be a farmer.",
     date: 'February 18th, 2026',
     tags: ['Personal', 'Mental Health', 'Philosophy'],
     image: '/assets/images/farmer.jpg',
@@ -267,12 +267,21 @@ export const Posts: PostMeta[] = [
   {
     slug: 'rachel',
     title: "In the Space Between Judgment and Grace",
-    description:
-      'This post tells the story of two friends who heard the same story but responded in completely different ways. It’s about grace versus certainty, loyalty versus control, and the kind of person I want to become when others are still growing.',
-    date: 'February 20th, 2026',
-    tags: ['Personal', 'Mental Health', 'Philosophy'],
-    image: '/assets/images/rachel.jpg',
+    description: "This post tells the story of two friends who heard the same story but responded in completely different ways. It's about grace versus certainty, loyalty versus control, and the kind of person I want to become when others are still growing",
+    date: "February 20th, 2026",
+    tags: ["Personal", "Mental Health", "Philosophy"],
+    image: "/assets/images/rachel.jpg",
     readingTime: 11,
-    component: React.lazy(() => import('../posts/Rachel')),
+    component: React.lazy(() => import("../posts/Rachel")),
+  },
+  {
+    slug: "jason",
+    title: "Promises, Pride, and $25",
+    description: "This post explores how a lifelong bond between cousins unraveled over twenty-five dollars, and how what seemed like a small disagreement was really a clash between pride, principle, and the meaning of keeping your word.",
+    date: "March 3rd, 2026",
+    tags: ["Personal", "Mental Health", "Philosophy"],
+    image: "/assets/images/jason.jpg",
+    readingTime: 12,
+    component: React.lazy(() => import("../posts/Jason")),
   },
 ];
