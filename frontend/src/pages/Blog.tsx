@@ -206,7 +206,7 @@ export const BlogPostDetails = () => {
       window.scrollTo(0, 0);
       document.title = `${post.title} | Nate's Blog`;
     }
-  }, [post]);
+  }, [slug]);
 
   if (!post) {
     return (

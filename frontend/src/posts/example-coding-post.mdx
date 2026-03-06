@@ -1,8 +1,45 @@
-Some intro text here. Write prose just like any other post.
+While working on a sample Pyra project, which is a blog page called LifeAtRuntime, I ran into an interesting issue.
 
-## Section Heading
+<br/ >
+LifeAtRuntime is meant to be a blog where I write about code, web development, and honestly whatever else I feel like writing about. As I continue building Pyra.js, I’m documenting issues like this here and later I’ll turn them into full blog posts once everything is polished. The idea is that these posts will serve as a kind of proof that Pyra is production ready.
+<br />
+Anyway, the issue started when I tried to use Framer Motion in one of the components. In that component I used the initial attribute with an `opacity` of `0` so that the element would animate into view on page load.
+<br/ >
+But the animation never happened.
+Framer Motion renders elements at their initial state during SSR. In this case that means the element is rendered with `opacity: 0`. After that, Framer Motion relies on client side effects to animate the element to its final state.
+<br/ >
+If anything disrupts that handoff between the server render and the client hydration, the element can remain stuck in its initial state. With the stack I’m using here, which is React 19 with Framer Motion v12, that handoff wasn’t behaving the way it should.
+<br/ >
+On a normal static React application where there is no SSR, the animation works perfectly. On a Pyra SSR application, everything appeared instantly with no animation at all.
+<br/ >
+At that point I realized that this is not something Pyra itself can directly fix. The behavior comes from a third party library interacting with React’s hydration process.
+<br/ >
+The solution from the Pyra side is the `<ClientOnly>` component.
+<br/ >
+`<ClientOnly>` skips server side rendering entirely for its children. The server returns `null` or a `fallback`, and the component mounts only after the client is fully ready. When Framer Motion initializes in that environment, it starts fresh with no hydration concerns.
+```tsx
+import { ClientOnly } from '@pyra-js/adapter-react'
+import { motion } from 'framer-motion'
 
-Explanation of the concept.
+export default function Hero() {
+  return (
+    <section className="...">
+      <ClientOnly fallback={<div className="hero-content-static">...</div>}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          {/* all your framer motion stuff */}
+        </motion.div>
+      </ClientOnly>
+    </section>
+  )
+}
+```
+The `fallback` prop allows you to render a static version of the content during SSR so the page is not blank before JavaScript loads. Once the client mounts, the animated version replaces it.
+<br/ >
+For something like a hero section that is purely visual, you can even skip the fallback entirely and just let the animation appear once the client loads.
+<br/ >
+After implementing this, I ran into another issue.
+<br/ >
+
 
 ```typescript
 const add = (a: number, b: number) => a + b;
@@ -10,10 +47,3 @@ const add = (a: number, b: number) => a + b;
 console.log(add(1, 2)); // 3
 ```
 
-More prose after the code block. You can use **bold**, *italic*, and all standard markdown.
-
-```bash
-npm install some-package
-```
-
-Keep writing normally between code blocks.
