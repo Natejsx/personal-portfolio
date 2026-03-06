@@ -74,7 +74,7 @@ const BlogCategorySelect = ({
           <div className="category-card-body">
             <h3>Coding</h3>
             <p>
-              Web development, programming tutorials, and technical insights
+              Web development, technical insights, and all things Computer Science 
             </p>
             <span className="post-count">{codingCount} posts</span>
           </div>

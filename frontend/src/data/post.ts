@@ -287,7 +287,7 @@ export const Posts: PostMeta[] = [
   {
     slug: "debugging-an-ssr-animation-bug",
     title: "Debugging an SSR Animation bug in Pyra.js",
-    description: "A sample MDX coding post with syntax-highlighted code blocks.",
+    description: "This post walks through a SSR animation bug I ran into while building a Pyra.js project, how Framer Motion's hydration handoff breaks under certain conditions, and the solution I built into Pyra to handle it.",
     date: "March 4th, 2026",
     tags: ["Programming", "Web Development", "TypeScript"],
     image: "/assets/images/coding.jpg",
