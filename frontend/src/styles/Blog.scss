@@ -98,6 +98,134 @@
     }
   }
 
+  .blog-category-select {
+    padding: 4rem 2rem;
+    background-color: p.$primary-bg;
+
+    .category-select-header {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: p.$accent-second-bg;
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #666;
+      }
+    }
+
+    .category-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .category-card {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      background-color: white;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+
+        .category-card-arrow {
+          transform: translateX(4px);
+        }
+      }
+
+      &.life {
+        &:hover {
+          border-color: p.$main-color;
+        }
+
+        .category-card-icon i {
+          color: p.$main-color;
+          background-color: rgba(74, 191, 102, 0.1);
+        }
+
+        .post-count {
+          color: p.$main-color;
+          background-color: rgba(74, 191, 102, 0.1);
+        }
+      }
+
+      &.coding {
+        &:hover {
+          border-color: p.$accent-main;
+        }
+
+        .category-card-icon i {
+          color: p.$accent-main;
+          background-color: rgba(p.$accent-main, 0.08);
+        }
+
+        .post-count {
+          color: p.$accent-main;
+          background-color: rgba(p.$accent-main, 0.08);
+        }
+      }
+
+      .category-card-icon {
+        flex-shrink: 0;
+
+        i {
+          font-size: 2.25rem;
+          padding: 1rem;
+          border-radius: 12px;
+          display: block;
+        }
+      }
+
+      .category-card-body {
+        flex: 1;
+
+        h3 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: p.$accent-second-bg;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 0.95rem;
+          color: #666;
+          line-height: 1.5;
+          margin-bottom: 0.75rem;
+        }
+
+        .post-count {
+          display: inline-block;
+          font-size: 0.8rem;
+          font-weight: 600;
+          padding: 0.25rem 0.75rem;
+          border-radius: 50px;
+        }
+      }
+
+      .category-card-arrow {
+        flex-shrink: 0;
+        font-size: 1.75rem;
+        color: #bbb;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
   .blog-filter-container {
     background-color: p.$primary-bg;
     padding: 2rem 1rem;
