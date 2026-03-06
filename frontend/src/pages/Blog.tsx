@@ -112,7 +112,7 @@ export const Blog = () => {
   const [activeCategory, setActiveCategory] = React.useState('All');
 
   const filteredPosts = React.useMemo(() => {
-    let results = Posts;
+    let results = [...Posts].reverse();
 
     // Filter by category
     if (activeCategory !== 'All') {

@@ -1,44 +1,19 @@
-import { PostLayout } from '../components/PostLayout';
-
-<PostLayout
-  title="Your Post Title"
-  author="Nate"
-  date="March 5th, 2026"
-  readingTime="5 min read"
-  featuredImage="/assets/images/your-image.jpg"
->
-
-Your intro paragraph goes here. Write normally just like any other blog post.
+Some intro text here. Write prose just like any other post.
 
 ## Section Heading
 
-More prose content here. You can use **bold**, *italic*, and all standard markdown.
-
-### Code Example
-
-Here's how you embed a code block with syntax highlighting:
+Explanation of the concept.
 
 ```typescript
-const greet = (name: string): string => {
-  return `Hello, ${name}!`;
-};
+const add = (a: number, b: number) => a + b;
 
-console.log(greet('World'));
+console.log(add(1, 2)); // 3
 ```
 
-You can use any language identifier — `javascript`, `typescript`, `python`, `bash`, `css`, etc.
-
-```javascript
-// JavaScript example
-function add(a, b) {
-  return a + b;
-}
-```
+More prose after the code block. You can use **bold**, *italic*, and all standard markdown.
 
 ```bash
 npm install some-package
 ```
 
-Regular prose continues after code blocks just fine.
-
-</PostLayout>
+Keep writing normally between code blocks.
