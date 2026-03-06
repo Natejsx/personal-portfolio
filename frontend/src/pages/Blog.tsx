@@ -197,14 +197,19 @@ export const Blog = () => {
 //   return Math.ceil(wordCount / wordsPerMinute);
 // };
 
+let lastScrolledSlug: string | null = null;
+
 export const BlogPostDetails = () => {
   const { slug = '' } = useParams<{ slug: string }>();
   const post = Posts.find((p) => p.slug === slug);
 
   React.useEffect(() => {
     if (post) {
-      window.scrollTo(0, 0);
       document.title = `${post.title} | Nate's Blog`;
+      if (lastScrolledSlug !== slug) {
+        window.scrollTo(0, 0);
+        lastScrolledSlug = slug;
+      }
     }
   }, [slug]);
 
@@ -281,7 +286,7 @@ export const BlogPostDetails = () => {
           <div className="content-card">
             <Suspense
               fallback={
-                <div className="content-loading">Loading article...</div>
+                <div className="content-loading" style={{ minHeight: '100vh' }}>Loading article...</div>
               }
             >
               <Content />

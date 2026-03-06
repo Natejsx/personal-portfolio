@@ -9,8 +9,8 @@ import rehypeHighlight from "rehype-highlight";
 export default defineConfig({
   plugins: [
     tempo(),
-    mdx({ rehypePlugins: [rehypeHighlight] }),
-    react(),
+    { enforce: 'pre', ...mdx({ rehypePlugins: [rehypeHighlight] }) },
+    react({ include: /\.(jsx|tsx|mdx)$/ }),
   ],
   resolve: {
     alias: {

@@ -39,6 +39,38 @@ For something like a hero section that is purely visual, you can even skip the f
 <br/ >
 After implementing this, I ran into another issue.
 <br/ >
+This time the error involved the Fast Refresh Babel plugin trying to resolve an import. After digging into the `fast-refresh-plugin.ts` file, I realized what was happening.
+<br/ >
+This plugin is relatively new, I built it yesterday so It was bound to pop out a few bugs here and ther. When the browser bundle includes `@pyra-js/adapter-react` because the user imports `ClientOnly`, esbuild follows the entire static import chain:
+
+```bash
+index.js
+→ adapter.js
+→ fast-refresh-plugin.js
+→ @babel/core
+```
+At that point esbuild tries to bundle @babel/core, which contains an internal reference to:
+
+```typescript
+@babel/preset-typescript/package.json
+```
+That dependency is not installed, so the build fails. Another issue is that this line inside `fast-refresh-plugin.ts`:
+
+```ts
+const _require = createRequire(import.meta.url)
+```
+runs at module load time. That works in `Node.js`, but it crashes in a browser context.
+<br/ >
+After making some changes, I linked my local Pyra build using npm link and tested it inside my sample project. I immediately got a different error. At this point I realized the fix existed in the source code, but the build output might not have included it, or there might be another esbuild call inside the dev server pipeline that still bundles the problematic code.
+<br/ >
+The error trace pointed to this line inside a `.cts` handler. It is essentially a static `require()` that esbuild discovers while bundling `@babel/core`.
+<br/ >
+My fix in `bundler.ts` should have prevented esbuild from entering @babel/core entirely by externalizing it, but the error still occurred. That meant there had to be another esbuild call somewhere that did not include the same externalization rule.
+<br/ >
+<br/ >
+<br/ >
+<br/ >
+
 
 
 ```typescript
