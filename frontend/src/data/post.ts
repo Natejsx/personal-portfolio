@@ -294,4 +294,14 @@ export const Posts: PostMeta[] = [
     readingTime: 5,
     component: React.lazy(() => import("../posts/Debugging-SSR-Animation.mdx")),
   },
+  {
+    slug: "intimacy",
+    title: "The Meaning of Intimacy",
+    description: "This post reflects on the meaning of intimacy, questioning whether modern hookup culture has caused us to treat one of the deepest forms of human connection as something casual and disposable.",
+    date: "March 7th, 2026",
+    tags: ["Personal", "Philosophy"],
+    image: "/assets/images/intimacy.jpg",
+    readingTime: 5,
+    component: React.lazy(() => import("../posts/Intimacy")),
+  },
 ];
