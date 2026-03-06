@@ -7,6 +7,9 @@ import BlogPostCard from '../components/BlogPostCard';
 import { Posts } from '@/data/post';
 import logo from '../../public/assets/images/logo.jpg';
 
+const LIFE_TAGS = ['Personal', 'Mental Health', 'Philosophy', 'Self-Improvement', 'Relationships', 'Career'];
+const CODING_TAGS = ['Web Development', 'Programming', 'React', 'TypeScript'];
+
 export const BlogBanner = () => {
   return (
     <div className="blogBanner-container">
@@ -28,16 +31,78 @@ export const BlogBanner = () => {
   );
 };
 
+const BlogCategorySelect = ({
+  onSelect,
+}: {
+  onSelect: (cat: 'life' | 'coding') => void;
+}) => {
+  const lifeCount = Posts.filter((p) =>
+    p.tags.some((t) => LIFE_TAGS.includes(t))
+  ).length;
+  const codingCount = Posts.filter((p) =>
+    p.tags.some((t) => CODING_TAGS.includes(t))
+  ).length;
+
+  return (
+    <section className="blog-category-select">
+      <div className="category-select-header">
+        <h2>What would you like to read?</h2>
+        <p>Choose a category to explore</p>
+      </div>
+      <div className="category-cards">
+        <div className="category-card life" onClick={() => onSelect('life')}>
+          <div className="category-card-icon">
+            <i className="bx bx-heart"></i>
+          </div>
+          <div className="category-card-body">
+            <h3>Life</h3>
+            <p>
+              Personal stories, mental health, philosophy, relationships, and
+              more
+            </p>
+            <span className="post-count">{lifeCount} posts</span>
+          </div>
+          <div className="category-card-arrow">
+            <i className="bx bx-right-arrow-alt"></i>
+          </div>
+        </div>
+
+        <div className="category-card coding" onClick={() => onSelect('coding')}>
+          <div className="category-card-icon">
+            <i className="bx bx-code-alt"></i>
+          </div>
+          <div className="category-card-body">
+            <h3>Coding</h3>
+            <p>
+              Web development, programming tutorials, and technical insights
+            </p>
+            <span className="post-count">{codingCount} posts</span>
+          </div>
+          <div className="category-card-arrow">
+            <i className="bx bx-right-arrow-alt"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 interface BlogFilterProps {
   onSearch: (term: string) => void;
   onCategoryFilter: (category: string) => void;
   activeCategory: string;
+  filters: string[];
+  categoryLabel: string;
+  onBack: () => void;
 }
 
 export const BlogFilter: React.FC<BlogFilterProps> = ({
   onSearch,
   onCategoryFilter,
   activeCategory,
+  filters,
+  categoryLabel,
+  onBack,
 }) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onSearch(event.target.value);
@@ -45,6 +110,14 @@ export const BlogFilter: React.FC<BlogFilterProps> = ({
 
   return (
     <section className="blog-filter-container">
+      <div className="filter-breadcrumb">
+        <button className="back-btn" onClick={onBack}>
+          <i className="bx bx-chevron-left"></i>
+          Blog
+        </button>
+        <span className="breadcrumb-separator">/</span>
+        <span className="breadcrumb-current">{categoryLabel}</span>
+      </div>
       <div className="filter-top">
         <div className="input-container">
           <input
@@ -62,7 +135,7 @@ export const BlogFilter: React.FC<BlogFilterProps> = ({
         >
           All
         </button>
-        {Filters.map((element, index) => (
+        {filters.map((element, index) => (
           <button
             key={index}
             className={activeCategory === element ? 'active' : ''}
@@ -94,32 +167,31 @@ export const BlogNewsLetter = () => {
   );
 };
 
-const Filters = [
-  'Personal',
-  'Mental Health',
-  'Philosophy',
-  'Self-Improvement',
-  'Relationships',
-  'Career',
-  'Web Development',
-  'Programming',
-  'React',
-  'TypeScript',
-];
-
 export const Blog = () => {
+  const [selectedCategory, setSelectedCategory] = React.useState<
+    'life' | 'coding' | null
+  >(null);
   const [searchTerm, setSearchTerm] = React.useState('');
   const [activeCategory, setActiveCategory] = React.useState('All');
 
-  const filteredPosts = React.useMemo(() => {
-    let results = [...Posts].reverse();
+  const categoryPosts = React.useMemo(() => {
+    const reversed = [...Posts].reverse();
+    if (selectedCategory === 'life')
+      return reversed.filter((p) => p.tags.some((t) => LIFE_TAGS.includes(t)));
+    if (selectedCategory === 'coding')
+      return reversed.filter((p) =>
+        p.tags.some((t) => CODING_TAGS.includes(t))
+      );
+    return reversed;
+  }, [selectedCategory]);
 
-    // Filter by category
+  const filteredPosts = React.useMemo(() => {
+    let results = categoryPosts;
+
     if (activeCategory !== 'All') {
       results = results.filter((p) => p.tags.some((t) => t === activeCategory));
     }
 
-    // Filter by search term
     const q = searchTerm.trim().toLowerCase();
     if (q) {
       results = results.filter(
@@ -131,71 +203,86 @@ export const Blog = () => {
     }
 
     return results;
-  }, [searchTerm, activeCategory]);
+  }, [categoryPosts, searchTerm, activeCategory]);
 
   const handleSearch = (term: string) => setSearchTerm(term);
   const handleCategoryFilter = (category: string) => {
     setActiveCategory(category);
-    setSearchTerm(''); // Clear search when changing category
+    setSearchTerm('');
   };
+  const handleSelectCategory = (cat: 'life' | 'coding') => {
+    setSelectedCategory(cat);
+    setSearchTerm('');
+    setActiveCategory('All');
+  };
+  const handleBack = () => {
+    setSelectedCategory(null);
+    setSearchTerm('');
+    setActiveCategory('All');
+  };
+
+  const activeFilters = selectedCategory === 'life' ? LIFE_TAGS : CODING_TAGS;
+  const categoryLabel = selectedCategory === 'life' ? 'Life' : 'Coding';
 
   return (
     <section id="blog">
       <Nav />
       <BlogBanner />
-      <BlogFilter
-        onSearch={handleSearch}
-        onCategoryFilter={handleCategoryFilter}
-        activeCategory={activeCategory}
-      />
-      <div className="blog-content-wrapper">
-        <div className="post-container">
-          {filteredPosts.length > 0 ? (
-            filteredPosts.map((p) => (
-              <BlogPostCard
-                key={p.slug}
-                slug={p.slug}
-                postName={p.title}
-                postDesc={p.description}
-                postDate={p.date}
-                filters={p.tags}
-                image={p.image}
-                readingTime={p.readingTime}
-                onSearch={handleSearch}
-              />
-            ))
-          ) : (
-            <div className="no-results">
-              <i className="bx bx-search-alt"></i>
-              <h3>No posts found</h3>
-              <p>
-                {searchTerm
-                  ? `No posts matching "${searchTerm}"`
-                  : `No posts in category "${activeCategory}"`}
-              </p>
-              <button
-                onClick={() => {
-                  setSearchTerm('');
-                  setActiveCategory('All');
-                }}
-              >
-                Clear Filters
-              </button>
+      {!selectedCategory ? (
+        <BlogCategorySelect onSelect={handleSelectCategory} />
+      ) : (
+        <>
+          <BlogFilter
+            onSearch={handleSearch}
+            onCategoryFilter={handleCategoryFilter}
+            activeCategory={activeCategory}
+            filters={activeFilters}
+            categoryLabel={categoryLabel}
+            onBack={handleBack}
+          />
+          <div className="blog-content-wrapper">
+            <div className="post-container">
+              {filteredPosts.length > 0 ? (
+                filteredPosts.map((p) => (
+                  <BlogPostCard
+                    key={p.slug}
+                    slug={p.slug}
+                    postName={p.title}
+                    postDesc={p.description}
+                    postDate={p.date}
+                    filters={p.tags}
+                    image={p.image}
+                    readingTime={p.readingTime}
+                    onSearch={handleSearch}
+                  />
+                ))
+              ) : (
+                <div className="no-results">
+                  <i className="bx bx-search-alt"></i>
+                  <h3>No posts found</h3>
+                  <p>
+                    {searchTerm
+                      ? `No posts matching "${searchTerm}"`
+                      : `No posts in category "${activeCategory}"`}
+                  </p>
+                  <button
+                    onClick={() => {
+                      setSearchTerm('');
+                      setActiveCategory('All');
+                    }}
+                  >
+                    Clear Filters
+                  </button>
+                </div>
+              )}
             </div>
-          )}
-        </div>
-      </div>
+          </div>
+        </>
+      )}
       <BlogNewsLetter />
     </section>
   );
 };
-
-// Calculate reading time based on word count
-// const calculateReadingTime = (content: string): number => {
-//   const wordsPerMinute = 200;
-//   const wordCount = content.split(/\s+/).length;
-//   return Math.ceil(wordCount / wordsPerMinute);
-// };
 
 let lastScrolledSlug: string | null = null;
 
@@ -293,25 +380,6 @@ export const BlogPostDetails = () => {
             </Suspense>
           </div>
         </article>
-
-        {/* CTA Section */}
-        {/* <div className="blog-cta-section">
-          <div className="cta-card">
-            <i className="bx bx-code-alt cta-icon"></i>
-            <h3 className="cta-title">Want to work together?</h3>
-            <p className="cta-description">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-            </p>
-            <div className="cta-buttons">
-              <Link to="/contact" className="cta-btn-primary">
-                Get in Touch
-              </Link>
-              <Link to="/portfolio" className="cta-btn-secondary">
-                View Portfolio
-              </Link>
-            </div>
-          </div>
-        </div> */}
 
         {/* Related Posts */}
         <section className="related-posts-section">
