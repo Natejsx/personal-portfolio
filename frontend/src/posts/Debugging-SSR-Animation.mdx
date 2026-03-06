@@ -41,7 +41,7 @@ After implementing this, I ran into another issue.
 <br/ >
 This time the error involved the Fast Refresh Babel plugin trying to resolve an import. After digging into the `fast-refresh-plugin.ts` file, I realized what was happening.
 <br/ >
-This plugin is relatively new, I built it yesterday so It was bound to pop out a few bugs here and ther. When the browser bundle includes `@pyra-js/adapter-react` because the user imports `ClientOnly`, esbuild follows the entire static import chain:
+This plugin is relatively new, I built it yesterday so It was bound to pop out a few bugs here and e. When the browser bundle includes `@pyra-js/adapter-react` because the user imports `ClientOnly`, esbuild follows the entire static import chain:
 
 ```bash
 index.js
@@ -65,17 +65,57 @@ After making some changes, I linked my local Pyra build using npm link and teste
 <br/ >
 The error trace pointed to this line inside a `.cts` handler. It is essentially a static `require()` that esbuild discovers while bundling `@babel/core`.
 <br/ >
-My fix in `bundler.ts` should have prevented esbuild from entering @babel/core entirely by externalizing it, but the error still occurred. That meant there had to be another esbuild call somewhere that did not include the same externalization rule.
+My fix in `bundler.ts` should have prevented esbuild from entering `@babel/core` entirely by externalizing it, but the error still occurred. That meant there had to be another esbuild call somewhere that did not include the same externalization rule.
 <br/ >
-<br/ >
-<br/ >
-<br/ >
+Eventually I found the real issue. `compileForServer`, which is used for server side route compilation, only externalizes React. Everything else gets bundled. That includes:
 
-
-
-```typescript
-const add = (a: number, b: number) => a + b;
-
-console.log(add(1, 2)); // 3
+```bash
+@pyra-js/adapter-react
+→ fast-refresh-plugin.js
+→ @babel/core
 ```
+Since this code runs on the server and is loaded with `import()` at runtime where all packages are already available, the correct fix is to externalize all `node_modules` packages.
+<br/ >
+Once I did that, the error disappeared. So what actually happened here?
+<br/ >
+When using SSR, the server sends real HTML to the browser. The page is rendered with `renderToString()` and sent as static markup. The browser paints that immediately, which means the content is visible before any JavaScript runs.
+<br/ >
+Then React hydrates the page. During hydration, React attaches event listeners and takes control of the existing DOM. At this point Framer Motion initializes. However, the motion.div elements already exist in the DOM because they were rendered by the server.
+<br/ >
+Framer Motion has no way to know whether those elements just appeared or whether they were already there from the beginning. Because of that, it skips the entry animation and jumps straight to the final state.
+<br/ >
+From Framer Motion’s perspective, there is nothing to animate because the elements already exist.
+<br/ >
+This behavior is actually intentional. If Framer Motion always respected the initial state during SSR, every page would briefly flash invisible before animating to full opacity. That would look terrible.
+<br/ >
+So it protects you from that situation, but the side effect is that entry animations silently disappear. The fix for this is Pyra’s `<ClientOnly>` component.
+<br/ >
+The pattern is similar to approaches used in frameworks like Next.js and Remix.
+<br/ >
+It works like this:
+
+* On the server, a static fallback renders as normal HTML.
+* On the client, after hydration and useEffect, the real component replaces it.
+
+```tsx
+<ClientOnly fallback={<div>...static visible content...</div>}>
+  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    ...animated content...
+  </motion.div>
+</ClientOnly>
+```
+Because the Framer Motion components never appear in the SSR HTML, they are inserted fresh after hydration. Framer Motion then correctly detects them as new elements entering the tree and runs the entry animation.
+<br/ >
+These fixes will be included in Pyra version `0.27.12`.
+<br/ >
+I will probably publish it tomorrow. It is currently 12:45 AM and I have to be up at 7:00 AM, so that is enough debugging for tonight.
+<br/ >
+Have a blessed night 🙏
+<br/ >
+By Nate
+
+
+
+
+
 

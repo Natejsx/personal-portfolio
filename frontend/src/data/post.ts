@@ -290,8 +290,8 @@ export const Posts: PostMeta[] = [
     description: "A sample MDX coding post with syntax-highlighted code blocks.",
     date: "March 4th, 2026",
     tags: ["Programming", "Web Development", "TypeScript"],
-    image: "/assets/images/logo.jpg",
+    image: "/assets/images/coding.jpg",
     readingTime: 5,
-    component: React.lazy(() => import("../posts/example-coding-post.mdx")),
+    component: React.lazy(() => import("../posts/Debugging-SSR-Animation.mdx")),
   },
 ];
