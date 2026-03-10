@@ -12,7 +12,9 @@ export function usePosts(): { posts: PostMeta[]; loading: boolean } {
         // Merge: DB posts first (newest), then static posts
         // Deduplicate by slug in case a static slug was reused
         const staticSlugs = new Set(dbPosts.map((p) => p.slug));
-        const filteredStatic = Posts.filter((p) => !staticSlugs.has(p.slug));
+        const filteredStatic = [...Posts]
+          .reverse()
+          .filter((p) => !staticSlugs.has(p.slug));
         setPosts([...dbPosts, ...filteredStatic]);
       })
       .finally(() => setLoading(false));
