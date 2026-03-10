@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:front": "cd frontend && npm run dev",
-    "dev:back": "cd backend && npm run dev",
-    "install:all": "npm run install:front && npm run install:back",
-    "install:front": "cd frontend && npm ci",
-    "install:back": "cd backend && npm ci",
-    "build:front" : "cd frontend && npm run build",
-    "build:back": "cd backend && npm run build",
-    "build:all": "npm run build:front && npm run build:back"
+    "dev:front": "cd frontend && pnpm run dev",
+    "dev:back": "cd backend && pnpm run dev",
+    "install:all": "pnpm run install:front && pnpm run install:back",
+    "install:front": "cd frontend && pnpm install",
+    "install:back": "cd backend && pnpm install",
+    "build:front": "cd frontend && pnpm run build",
+    "build:back": "cd backend && pnpm run build",
+    "build:all": "pnpm run build:front && pnpm run build:back"
   },
   "engines": { "node": ">=18" },
   "keywords": ["Personal Portfolio", "Blog"],
