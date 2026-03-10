@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import MDEditor from "@uiw/react-md-editor";
 import "@uiw/react-md-editor/markdown-editor.css";
 import { useAuth } from "../../context/AuthContext";
-import { fetchDBPostBySlug, adminCreatePost, adminUpdatePost, NewPostPayload } from "../../services/api";
+import { fetchDBPostBySlug, adminCreatePost, adminUpdatePost, adminSendNewsletter, NewPostPayload } from "../../services/api";
 import "../../styles/admin.scss";
 
 function toSlug(title: string): string {
@@ -45,6 +45,7 @@ export default function PostEditor() {
   const [loading, setLoading] = useState(isEdit);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   useEffect(() => {
     if (!isEdit || !slug) return;
@@ -239,6 +240,32 @@ export default function PostEditor() {
             <button type="submit" className="admin-btn admin-btn--primary" disabled={saving}>
               {saving ? "Saving…" : isEdit ? "Save Changes" : "Publish Post"}
             </button>
+
+            {isEdit && slug && (
+              <div className="post-editor__newsletter">
+                <button
+                  type="button"
+                  className="admin-btn admin-btn--ghost"
+                  disabled={newsletterStatus === 'sending'}
+                  onClick={async () => {
+                    if (!token) return;
+                    setNewsletterStatus('sending');
+                    try {
+                      const result = await adminSendNewsletter(slug, token);
+                      setNewsletterStatus('sent');
+                      alert(`Newsletter sent to ${result.sent} subscriber${result.sent !== 1 ? 's' : ''}${result.failed > 0 ? ` (${result.failed} failed)` : ''}.`);
+                    } catch {
+                      setNewsletterStatus('error');
+                      alert('Failed to send newsletter.');
+                    }
+                  }}
+                >
+                  {newsletterStatus === 'sending' ? 'Sending…' : '✉ Send Newsletter'}
+                </button>
+                {newsletterStatus === 'sent' && <span className="admin-muted">Sent!</span>}
+                {newsletterStatus === 'error' && <span className="admin-error">Failed to send.</span>}
+              </div>
+            )}
           </div>
         </form>
       </div>
