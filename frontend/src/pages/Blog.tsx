@@ -296,9 +296,20 @@ let lastScrolledSlug: string | null = null;
 
 export const BlogPostDetails = () => {
   const { slug = '' } = useParams<{ slug: string }>();
-  const post = Posts.find((p) => p.slug === slug);
+  const [post, setPost] = useState<PostMeta | null | undefined>(undefined);
 
-  React.useEffect(() => {
+  useEffect(() => {
+    // First check static posts
+    const staticPost = Posts.find((p) => p.slug === slug);
+    if (staticPost) {
+      setPost(staticPost);
+      return;
+    }
+    // Fall back to DB
+    fetchDBPostBySlug(slug).then((dbPost) => setPost(dbPost));
+  }, [slug]);
+
+  useEffect(() => {
     if (post) {
       document.title = `${post.title} | Nate's Blog`;
       if (lastScrolledSlug !== slug) {
@@ -306,7 +317,11 @@ export const BlogPostDetails = () => {
         lastScrolledSlug = slug;
       }
     }
-  }, [slug]);
+  }, [post, slug]);
+
+  if (post === undefined) {
+    return <div className="content-loading">Loading…</div>;
+  }
 
   if (!post) {
     return (
@@ -379,13 +394,19 @@ export const BlogPostDetails = () => {
         {/* Article Content */}
         <article className="blog-article-content">
           <div className="content-card">
-            <Suspense
-              fallback={
-                <div className="content-loading" style={{ minHeight: '100vh' }}>Loading article...</div>
-              }
-            >
-              <Content />
-            </Suspense>
+            {post.content ? (
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                {post.content}
+              </ReactMarkdown>
+            ) : Content ? (
+              <Suspense
+                fallback={
+                  <div className="content-loading" style={{ minHeight: '100vh' }}>Loading article...</div>
+                }
+              >
+                <Content />
+              </Suspense>
+            ) : null}
           </div>
         </article>
 
