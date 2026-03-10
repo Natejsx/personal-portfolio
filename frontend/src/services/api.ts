@@ -100,3 +100,25 @@ export async function adminDeletePost(slug: string, token: string): Promise<void
   });
   if (!res.ok) throw new Error("Failed to delete post");
 }
+
+export async function subscribeToNewsletter(email: string): Promise<void> {
+  const res = await fetch(`${BASE_URL}/subscribers`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+  });
+  if (res.status === 409) throw new Error("Already subscribed");
+  if (!res.ok) throw new Error("Failed to subscribe");
+}
+
+export async function adminSendNewsletter(
+  slug: string,
+  token: string
+): Promise<{ sent: number; failed: number }> {
+  const res = await fetch(`${BASE_URL}/subscribers/${slug}/send-newsletter`, {
+    method: "POST",
+    headers: authHeaders(token),
+  });
+  if (!res.ok) throw new Error("Failed to send newsletter");
+  return res.json();
+}
