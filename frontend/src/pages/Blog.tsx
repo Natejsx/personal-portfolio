@@ -9,7 +9,7 @@ import '../styles/blogPost.scss';
 import BlogPostCard from '../components/BlogPostCard';
 import { Posts, PostMeta } from '@/data/post';
 import { usePosts } from '../hooks/usePosts';
-import { fetchDBPostBySlug } from '../services/api';
+import { fetchDBPostBySlug, subscribeToNewsletter } from '../services/api';
 import logo from '../../public/assets/images/logo.jpg';
 
 const LIFE_TAGS = ['Personal', 'Mental Health', 'Philosophy', 'Self-Improvement', 'Relationships', 'Career'];
@@ -157,6 +157,21 @@ export const BlogFilter: React.FC<BlogFilterProps> = ({
 };
 
 export const BlogNewsLetter = () => {
+  const [email, setEmail] = React.useState('');
+  const [status, setStatus] = React.useState<'idle' | 'loading' | 'success' | 'error' | 'duplicate'>('idle');
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      await subscribeToNewsletter(email);
+      setStatus('success');
+      setEmail('');
+    } catch (err) {
+      setStatus(err instanceof Error && err.message === 'Already subscribed' ? 'duplicate' : 'error');
+    }
+  }
+
   return (
     <section className="blog-newsletter">
       <div className="newsletter-container">
@@ -165,10 +180,22 @@ export const BlogNewsLetter = () => {
           Join my newsletter to recieve the latest posts and insights directly
           in your inbox
         </h3>
-        <form action="">
-          <input type="email" placeholder="Enter your email" required />
-          <input type="submit" value="Subscribe" />
+        {status === 'success' ? (
+          <p className="newsletter-success">You're subscribed! You'll hear from me next time I post.</p>
+        ) : (
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input type="submit" value={status === 'loading' ? 'Subscribing…' : 'Subscribe'} disabled={status === 'loading'} />
+          {status === 'duplicate' && <p className="newsletter-error">That email is already subscribed.</p>}
+          {status === 'error' && <p className="newsletter-error">Something went wrong. Try again.</p>}
         </form>
+        )}
       </div>
     </section>
   );
