@@ -1,0 +1,335 @@
+@use "plug" as *;
+
+// ── Layout ────────────────────────────────────────────────────────────────────
+
+.admin-layout {
+  min-height: 100vh;
+  background: #1a1a1a;
+  color: $light-text;
+  padding: rem(32px);
+
+  @media (max-width: $mobile) {
+    padding: rem(16px);
+  }
+}
+
+// ── Login ─────────────────────────────────────────────────────────────────────
+
+.admin-login {
+  max-width: 360px;
+  margin: rem(80px) auto 0;
+  background: $accent-main;
+  border-radius: $card-bdr;
+  padding: rem(40px);
+  box-shadow: $boxShadow;
+
+  h1 {
+    font-size: rem(28px);
+    margin-bottom: rem(24px);
+    color: $main-color;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12px);
+  }
+
+  input {
+    width: 100%;
+    padding: rem(10px) rem(14px);
+    background: $accent-second-bg;
+    border: 1px solid #555;
+    border-radius: $inner-card-bdr;
+    color: $light-text;
+    font-size: rem(15px);
+
+    &:focus {
+      outline: none;
+      border-color: $main-color;
+    }
+  }
+
+  button[type="submit"] {
+    margin-top: rem(4px);
+    padding: rem(10px);
+    background: $main-color;
+    color: #fff;
+    border: none;
+    border-radius: $button-bdr;
+    font-size: rem(15px);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover:not(:disabled) {
+      background: $dark-green;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// ── Dashboard ─────────────────────────────────────────────────────────────────
+
+.admin-dashboard {
+  max-width: rem(1000px);
+  margin: 0 auto;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(24px);
+
+    h1 {
+      font-size: rem(26px);
+      color: $main-color;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: rem(10px);
+  }
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: rem(14px);
+
+  th {
+    text-align: left;
+    padding: rem(10px) rem(12px);
+    background: $accent-main;
+    color: $muted-green;
+    font-weight: 600;
+    border-bottom: 2px solid #555;
+  }
+
+  td {
+    padding: rem(10px) rem(12px);
+    border-bottom: 1px solid #333;
+    vertical-align: middle;
+  }
+
+  tr:hover td {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  &__actions {
+    display: flex;
+    gap: rem(8px);
+  }
+}
+
+// ── Post Editor ───────────────────────────────────────────────────────────────
+
+.post-editor {
+  max-width: rem(900px);
+  margin: 0 auto;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(28px);
+
+    h1 {
+      font-size: rem(26px);
+      color: $main-color;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16px);
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(16px);
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__slug-row {
+    display: flex;
+    gap: rem(8px);
+
+    input {
+      flex: 1;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+
+    label {
+      font-weight: 600;
+      color: $muted-green;
+      font-size: rem(13px);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__checkbox {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: rem(8px);
+    cursor: pointer;
+
+    input[type="checkbox"] {
+      width: rem(16px);
+      height: rem(16px);
+      accent-color: $main-color;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: rem(8px);
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: rem(6px);
+    font-size: rem(13px);
+    font-weight: 600;
+    color: $muted-green;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    padding: rem(10px) rem(12px);
+    background: $accent-second-bg;
+    border: 1px solid #555;
+    border-radius: $inner-card-bdr;
+    color: $light-text;
+    font-size: rem(15px);
+    font-family: inherit;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      border-color: $main-color;
+    }
+  }
+}
+
+// ── Shared components ─────────────────────────────────────────────────────────
+
+.admin-btn {
+  padding: rem(8px) rem(16px);
+  border-radius: $soft-button-bdr;
+  font-size: rem(14px);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s, opacity 0.2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+
+  &--primary {
+    background: $main-color;
+    color: #fff;
+
+    &:hover {
+      background: $dark-green;
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $light-text;
+    border: 1px solid #555;
+
+    &:hover {
+      border-color: $main-color;
+      color: $main-color;
+    }
+  }
+
+  &--danger {
+    background: #c0392b;
+    color: #fff;
+
+    &:hover {
+      background: #a93226;
+    }
+  }
+
+  &--sm {
+    padding: rem(4px) rem(10px);
+    font-size: rem(13px);
+    background: $accent-second-bg;
+    color: $light-text;
+    border: 1px solid #555;
+
+    &:hover {
+      border-color: $main-color;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.admin-badge {
+  padding: rem(2px) rem(8px);
+  border-radius: rem(12px);
+  font-size: rem(12px);
+  font-weight: 700;
+
+  &--db {
+    background: rgba($main-color, 0.2);
+    color: $main-color;
+  }
+
+  &--static {
+    background: rgba($bright-two, 0.2);
+    color: $bright-two;
+  }
+}
+
+.admin-error {
+  color: #e74c3c;
+  font-size: rem(14px);
+  margin: 0;
+}
+
+.admin-status {
+  color: $muted-green;
+  font-size: rem(15px);
+}
+
+.admin-muted {
+  color: #666;
+  font-size: rem(13px);
+}
