@@ -199,6 +199,11 @@
       line-height: 1.8;
       color: #334155;
       overflow-wrap: break-word;
+      margin-bottom: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     h2,

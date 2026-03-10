@@ -2,6 +2,7 @@ import React, { Suspense, useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { Nav } from '../components/nav';
 import '../styles/Blog.scss';
 import '../styles/blogPost.scss';
@@ -395,7 +396,7 @@ export const BlogPostDetails = () => {
         <article className="blog-article-content">
           <div className="content-card">
             {post.content ? (
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
                 {post.content}
               </ReactMarkdown>
             ) : Content ? (
