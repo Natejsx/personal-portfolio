@@ -1,6 +1,6 @@
 import { PostMeta } from "../data/post";
 
-const BASE_URL = import.meta.env.DEV ? "http://localhost:8080/api" : "/api";
+const BASE_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8080/api";
 
 export async function getHello() {
   const res = await fetch(`${BASE_URL}/hello`);
