@@ -8,7 +8,8 @@ export type PostMeta = {
   tags: string[];
   image: string;
   readingTime: number; // in minutes
-  component: React.LazyExoticComponent<React.ComponentType>;
+  component?: React.LazyExoticComponent<React.ComponentType>; // static posts
+  content?: string; // DB posts (markdown)
 };
 
 export const Posts: PostMeta[] = [
