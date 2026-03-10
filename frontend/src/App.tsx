@@ -22,9 +22,6 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/testimonials" element={<Testimonials />} />
-          {import.meta.env.VITE_TEMPO && (
-            <Route path="/tempobook/*" element={null} />
-          )}
         </Routes>
       </main>
     </>
