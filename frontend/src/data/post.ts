@@ -10,6 +10,7 @@ export type PostMeta = {
   readingTime: number; // in minutes
   component?: React.LazyExoticComponent<React.ComponentType>; // static posts
   content?: string; // DB posts (markdown)
+  published?: boolean; // DB posts only
 };
 
 export const Posts: PostMeta[] = [

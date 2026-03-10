@@ -62,7 +62,7 @@ export default function PostEditor() {
         image: post.image,
         readingTime: post.readingTime,
         content: post.content,
-        published: (post as any).published ?? true,
+        published: post.published ?? true,
       });
       setTagsInput(post.tags.join(", "));
       setLoading(false);
