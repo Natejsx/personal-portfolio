@@ -1,10 +1,14 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Nav } from '../components/nav';
 import '../styles/Blog.scss';
 import '../styles/blogPost.scss';
 import BlogPostCard from '../components/BlogPostCard';
-import { Posts } from '@/data/post';
+import { Posts, PostMeta } from '@/data/post';
+import { usePosts } from '../hooks/usePosts';
+import { fetchDBPostBySlug } from '../services/api';
 import logo from '../../public/assets/images/logo.jpg';
 
 const LIFE_TAGS = ['Personal', 'Mental Health', 'Philosophy', 'Self-Improvement', 'Relationships', 'Career'];
@@ -33,13 +37,15 @@ export const BlogBanner = () => {
 
 const BlogCategorySelect = ({
   onSelect,
+  posts,
 }: {
   onSelect: (cat: 'life' | 'coding') => void;
+  posts: PostMeta[];
 }) => {
-  const lifeCount = Posts.filter((p) =>
+  const lifeCount = posts.filter((p) =>
     p.tags.some((t) => LIFE_TAGS.includes(t))
   ).length;
-  const codingCount = Posts.filter((p) =>
+  const codingCount = posts.filter((p) =>
     p.tags.some((t) => CODING_TAGS.includes(t))
   ).length;
 
@@ -168,6 +174,7 @@ export const BlogNewsLetter = () => {
 };
 
 export const Blog = () => {
+  const { posts: allPosts, loading } = usePosts();
   const [selectedCategory, setSelectedCategory] = React.useState<
     'life' | 'coding' | null
   >(null);
@@ -175,15 +182,14 @@ export const Blog = () => {
   const [activeCategory, setActiveCategory] = React.useState('All');
 
   const categoryPosts = React.useMemo(() => {
-    const reversed = [...Posts].reverse();
     if (selectedCategory === 'life')
-      return reversed.filter((p) => p.tags.some((t) => LIFE_TAGS.includes(t)));
+      return allPosts.filter((p) => p.tags.some((t) => LIFE_TAGS.includes(t)));
     if (selectedCategory === 'coding')
-      return reversed.filter((p) =>
+      return allPosts.filter((p) =>
         p.tags.some((t) => CODING_TAGS.includes(t))
       );
-    return reversed;
-  }, [selectedCategory]);
+    return allPosts;
+  }, [selectedCategory, allPosts]);
 
   const filteredPosts = React.useMemo(() => {
     let results = categoryPosts;
@@ -229,7 +235,7 @@ export const Blog = () => {
       <Nav />
       <BlogBanner />
       {!selectedCategory ? (
-        <BlogCategorySelect onSelect={handleSelectCategory} />
+        <BlogCategorySelect onSelect={handleSelectCategory} posts={allPosts} />
       ) : (
         <>
           <BlogFilter
@@ -242,7 +248,9 @@ export const Blog = () => {
           />
           <div className="blog-content-wrapper">
             <div className="post-container">
-              {filteredPosts.length > 0 ? (
+              {loading ? (
+                <div className="content-loading">Loading posts…</div>
+              ) : filteredPosts.length > 0 ? (
                 filteredPosts.map((p) => (
                   <BlogPostCard
                     key={p.slug}
@@ -257,7 +265,7 @@ export const Blog = () => {
                   />
                 ))
               ) : (
-                <div className="no-results">
+              <div className="no-results">
                   <i className="bx bx-search-alt"></i>
                   <h3>No posts found</h3>
                   <p>
