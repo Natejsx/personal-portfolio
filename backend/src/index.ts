@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRouter from "./routes/auth";
 import postsRouter from "./routes/posts";
+import subscribersRouter from "./routes/subscribers";
 dotenv.config();
 
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 // API routes
 app.use("/api/auth", authRouter);
 app.use("/api/posts", postsRouter);
+app.use("/api/subscribers", subscribersRouter);
 app.get("/api/hello", (_req, res) => res.json({ message: "Hello from the backend!" }));
 
 // Static assets from Vite build
