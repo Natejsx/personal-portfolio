@@ -302,6 +302,6 @@ export const Posts: PostMeta[] = [
     tags: ["Personal", "Philosophy"],
     image: "/assets/images/intimacy.jpg",
     readingTime: 10,
-    component: React.lazy(() => import("../posts/Intimacy")),
+    component: React.lazy(() => import("../posts/intimacy")),
   },
 ];
