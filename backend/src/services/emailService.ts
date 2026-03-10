@@ -1,8 +1,10 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const FROM = "Nate's Blog <onboarding@resend.dev>";
+
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
 const SITE_URL = process.env.SITE_URL ?? "http://localhost:5173";
 
 interface SendNewPostEmailParams {
@@ -23,7 +25,7 @@ export async function sendNewPostEmail({
   const postUrl = `${SITE_URL}/blog/${postSlug}`;
   const unsubscribeUrl = `${SITE_URL.replace("5173", "8080")}/api/subscribers/unsubscribe/${unsubscribeToken}`;
 
-  await resend.emails.send({
+  await getResend().emails.send({
     from: FROM,
     to: subscriberEmail,
     subject: `New post: ${postTitle}`,
