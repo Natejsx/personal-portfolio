@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -21,7 +21,7 @@ interface GalleryItem {
 }
 
 interface Gallery6Props {
-  heading?: string;
+  heading?: React.ReactNode;
   viewAllUrl?: string;
   items?: GalleryItem[];
 }
@@ -53,7 +53,7 @@ const Gallery6 = ({
   return (
     <section className="py-16">
       <div className="px-8 lg:px-16">
-        <div className="mb-8 flex flex-col justify-between md:mb-14 md:flex-row md:items-end lg:mb-16">
+        <div className="flex flex-col justify-between md:flex-row md:items-end" style={{ marginBottom: '1rem' }}>
           <div>
             <h2 className="mb-3 text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-6 text-[#ece4da]">
               {heading}
@@ -128,39 +128,41 @@ const Gallery6 = ({
                       </div>
                     </div>
                   </div>
-                  <div className="mb-2 line-clamp-2 break-words pt-4 text-lg font-medium md:mb-3 md:pt-4 md:text-xl lg:pt-4 lg:text-2xl text-[#ece4da]">
-                    {item.title}
-                  </div>
-                  {(item.status || item.year) && (
-                    <div className="mb-2 flex items-center gap-2">
-                      {item.status && (
-                        <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-[#b9a590]/20 text-[#b9a590]">
-                          {item.status}
-                        </span>
-                      )}
-                      {item.year && (
-                        <span className="text-xs text-[#b9a590]/70">{item.year}</span>
-                      )}
+                  <div className="flex flex-col gap-3 pt-5 pb-4">
+                    <div className="line-clamp-2 break-words text-lg font-medium md:text-xl lg:text-2xl text-[#ece4da]">
+                      {item.title}
                     </div>
-                  )}
-                  {item.techStack && item.techStack.length > 0 && (
-                    <div className="mb-2 flex flex-wrap gap-1">
-                      {item.techStack.slice(0, 4).map((tech) => (
-                        <span
-                          key={tech}
-                          className="text-xs px-2 py-0.5 rounded bg-[#574c3f]/50 text-[#ece4da]/80"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                    {(item.status || item.year) && (
+                      <div className="flex items-center gap-2">
+                        {item.status && (
+                          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#b9a590]/20 text-[#b9a590]">
+                            {item.status}
+                          </span>
+                        )}
+                        {item.year && (
+                          <span className="text-xs text-[#b9a590]/70">{item.year}</span>
+                        )}
+                      </div>
+                    )}
+                    {item.techStack && item.techStack.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {item.techStack.slice(0, 4).map((tech) => (
+                          <span
+                            key={tech}
+                            className="text-xs px-2.5 py-1 rounded bg-[#574c3f]/50 text-[#ece4da]/80"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <div className="line-clamp-2 text-sm text-[#b9a590] md:text-base">
+                      {item.summary}
                     </div>
-                  )}
-                  <div className="mb-8 line-clamp-2 text-sm text-[#b9a590] md:mb-12 md:text-base lg:mb-9">
-                    {item.summary}
-                  </div>
-                  <div className="flex items-center text-sm text-[#ece4da]">
-                    View Project{" "}
-                    <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
+                    <div className="flex items-center text-sm text-[#ece4da] pt-2">
+                      View Project{" "}
+                      <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
+                    </div>
                   </div>
                 </a>
               </CarouselItem>

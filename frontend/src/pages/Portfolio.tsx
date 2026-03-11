@@ -235,8 +235,8 @@ export const Portfolio = () => {
 
       {/* Projects Section */}
       <Gallery6
-        heading="My Personal <Projects/>"
-        viewAllUrl="https://github.com/Simpleboi"
+        heading={<>My Personal <span style={{ color: '#4abf66' }}>&lt;Projects/&gt;</span></>}
+        viewAllUrl="https://github.com/Natejsx"
         items={PortfolioItems.map((item, index) => ({
           id: `item-${index}`,
           title: item.title,
