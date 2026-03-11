@@ -30,19 +30,58 @@ export async function sendNewPostEmail({
     to: subscriberEmail,
     subject: `New post: ${postTitle}`,
     html: `
-      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #f9f9f9;">
-        <h1 style="color: #333; font-size: 24px; margin-bottom: 8px;">New post on Nate's Blog</h1>
-        <h2 style="color: #4abf66; font-size: 20px; margin-bottom: 12px;">${postTitle}</h2>
-        <p style="color: #555; font-size: 16px; line-height: 1.6; margin-bottom: 24px;">${postDescription}</p>
-        <a href="${postUrl}" style="display: inline-block; background: #4abf66; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600;">
-          Read Post →
-        </a>
-        <hr style="margin: 32px 0; border: none; border-top: 1px solid #ddd;" />
-        <p style="color: #999; font-size: 12px;">
-          You're receiving this because you subscribed to Nate's Blog.
-          <a href="${unsubscribeUrl}" style="color: #999;">Unsubscribe</a>
-        </p>
-      </div>
+      <!DOCTYPE html>
+      <html lang="en">
+      <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /></head>
+      <body style="margin: 0; padding: 0; background-color: #f4f4f5;">
+        <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f4f4f5; padding: 40px 0;">
+          <tr>
+            <td align="center">
+              <table width="600" cellpadding="0" cellspacing="0" style="max-width: 600px; width: 100%; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+
+                <!-- Header -->
+                <tr>
+                  <td style="background-color: #0f0f0f; padding: 32px 40px; text-align: center;">
+                    <p style="margin: 0; font-family: monospace; font-size: 22px; font-weight: 700; color: #4abf66; letter-spacing: 1px;">&lt;N8/&gt;</p>
+                    <p style="margin: 8px 0 0; font-family: sans-serif; font-size: 13px; color: #888; letter-spacing: 2px; text-transform: uppercase;">New Post</p>
+                  </td>
+                </tr>
+
+                <!-- Body -->
+                <tr>
+                  <td style="padding: 40px;">
+                    <p style="margin: 0 0 8px; font-family: sans-serif; font-size: 12px; font-weight: 600; color: #4abf66; text-transform: uppercase; letter-spacing: 1.5px;">Just published</p>
+                    <h1 style="margin: 0 0 16px; font-family: sans-serif; font-size: 26px; font-weight: 700; color: #111; line-height: 1.3;">${postTitle}</h1>
+                    <p style="margin: 0 0 32px; font-family: sans-serif; font-size: 16px; color: #555; line-height: 1.7;">${postDescription}</p>
+                    <a href="${postUrl}" style="display: inline-block; background-color: #4abf66; color: #ffffff; font-family: sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; padding: 14px 32px; border-radius: 8px;">
+                      Read Post →
+                    </a>
+                  </td>
+                </tr>
+
+                <!-- Divider -->
+                <tr>
+                  <td style="padding: 0 40px;">
+                    <hr style="border: none; border-top: 1px solid #ebebeb; margin: 0;" />
+                  </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                  <td style="padding: 24px 40px; text-align: center;">
+                    <p style="margin: 0; font-family: sans-serif; font-size: 12px; color: #aaa; line-height: 1.6;">
+                      You're receiving this because you subscribed to Nate's Blog.<br />
+                      <a href="${unsubscribeUrl}" style="color: #aaa; text-decoration: underline;">Unsubscribe</a>
+                    </p>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+        </table>
+      </body>
+      </html>
     `,
   });
 }
