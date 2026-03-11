@@ -52,7 +52,7 @@ const Gallery6 = ({
 
   return (
     <section className="py-16">
-      <div className="px-8 lg:px-16">
+      <div style={{ paddingLeft: '2rem', paddingRight: '3rem' }}>
         <div className="flex flex-col justify-between md:flex-row md:items-end" style={{ marginBottom: '1rem' }}>
           <div>
             <h2 className="mb-3 text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-6 text-[#ece4da]">
@@ -104,9 +104,9 @@ const Gallery6 = ({
               },
             },
           }}
-          className="relative left-[-1rem]"
+          className="relative"
         >
-          <CarouselContent className="ml-8 lg:ml-16 gap-6 2xl:ml-[max(4rem,calc(50vw-700px+1rem))] 2xl:mr-[max(0rem,calc(50vw-700px-1rem))]">
+          <CarouselContent style={{ marginLeft: '2rem' }} className="gap-6">
             {items.map((item) => (
               <CarouselItem key={item.id} className="pl-0 md:max-w-[452px]">
                 <a
