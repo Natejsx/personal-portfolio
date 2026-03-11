@@ -124,7 +124,7 @@ const Gallery6 = ({
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-3 pt-5 pb-4">
+                  <div className="flex flex-col gap-3 pb-4" style={{ paddingTop: '0.5rem' }}>
                     <div className="line-clamp-2 break-words text-lg font-medium md:text-xl lg:text-2xl text-[#ece4da]">
                       {item.title}
                     </div>
@@ -152,7 +152,7 @@ const Gallery6 = ({
                         ))}
                       </div>
                     )}
-                    <div className="line-clamp-2 text-sm text-[#b9a590] md:text-base">
+                    <div className="line-clamp-4 text-sm text-[#b9a590] md:text-base">
                       {item.summary}
                     </div>
                     <div className="flex items-center text-sm text-[#ece4da] pt-2">
