@@ -1,8 +1,8 @@
 import { Nav } from '@/components/nav';
-// import blogPost from "/assets/images/blog-post-one.jpg";
 import compsci from '/assets/images/compsci-logo.png';
 import sjcLogo from '/assets/images/sjc-logo.jpg';
 import '../styles/portfolio.scss';
+import { Gallery6 } from '@/components/blocks/gallery6';
 
 interface PortfolioCardProps {
   title: string;
