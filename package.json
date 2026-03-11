@@ -12,7 +12,10 @@
     "install:back": "cd backend && pnpm install",
     "build:front": "cd frontend && pnpm run build",
     "build:back": "cd backend && pnpm run build",
-    "build:all": "pnpm run build:front && pnpm run build:back"
+    "build:all": "pnpm run build:front && pnpm run build:back",
+    "typecheck:front": "cd frontend && pnpm exec tsc --noEmit",
+    "typecheck:back": "cd backend && pnpm exec tsc --noEmit",
+    "typecheck": "pnpm run typecheck:front && pnpm run typecheck:back"
   },
   "engines": { "node": ">=18" },
   "keywords": ["Personal Portfolio", "Blog"],
