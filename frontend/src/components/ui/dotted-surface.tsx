@@ -61,11 +61,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
                 const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
 
                 positions.push(x, y, z);
-                if (theme === 'dark') {
-                    colors.push(200, 200, 200);
-                } else {
-                    colors.push(0, 0, 0);
-                }
+                colors.push(255, 255, 255);
             }
         }
 
@@ -166,7 +162,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
                 }
             }
         };
-    }, [theme]);
+    }, []);
 
     return (
         <div
