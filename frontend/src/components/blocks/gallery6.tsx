@@ -135,7 +135,7 @@ const Gallery6 = ({
                     {(item.status || item.year) && (
                       <div className="flex items-center gap-2">
                         {item.status && (
-                          <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#b9a590]/20 text-[#b9a590]">
+                          <span style={{ padding: '0.35rem 1rem', borderRadius: '9999px', backgroundColor: 'rgba(74,191,102,0.15)', color: '#4abf66', fontSize: '0.75rem', fontWeight: 600 }}>
                             {item.status}
                           </span>
                         )}
@@ -149,7 +149,7 @@ const Gallery6 = ({
                         {item.techStack.slice(0, 4).map((tech) => (
                           <span
                             key={tech}
-                            className="text-xs px-2.5 py-1 rounded bg-[#574c3f]/50 text-[#ece4da]/80"
+                            style={{ padding: '0.35rem 0.85rem', borderRadius: '4px', backgroundColor: 'rgba(74,191,102,0.15)', color: '#4abf66', fontSize: '0.75rem' }}
                           >
                             {tech}
                           </span>
