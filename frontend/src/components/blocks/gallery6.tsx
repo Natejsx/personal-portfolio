@@ -106,9 +106,9 @@ const Gallery6 = ({
           }}
           className="relative left-[-1rem]"
         >
-          <CarouselContent className="-mr-4 ml-8 lg:ml-16 2xl:ml-[max(4rem,calc(50vw-700px+1rem))] 2xl:mr-[max(0rem,calc(50vw-700px-1rem))]">
+          <CarouselContent className="ml-8 lg:ml-16 gap-6 2xl:ml-[max(4rem,calc(50vw-700px+1rem))] 2xl:mr-[max(0rem,calc(50vw-700px-1rem))]">
             {items.map((item) => (
-              <CarouselItem key={item.id} className="pl-4 md:max-w-[452px]">
+              <CarouselItem key={item.id} className="pl-0 md:max-w-[452px]">
                 <a
                   href={item.url}
                   target="_blank"

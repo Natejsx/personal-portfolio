@@ -234,25 +234,20 @@ export const Portfolio = () => {
       <Nav />
 
       {/* Projects Section */}
-      <div className="port-header">
-        <h1>
-          My Personal <span>&lt;Projects/&gt;</span>
-        </h1>
-      </div>
-      <div className="portfolio-grid">
-        {PortfolioItems.map((element, index) => (
-          <PortfolioCard
-            key={index}
-            title={element.title}
-            desc={element.desc}
-            image={element.image}
-            link={element.link}
-            techStack={element.techStack}
-            status={element.status}
-            year={element.year}
-          />
-        ))}
-      </div>
+      <Gallery6
+        heading="My Personal <Projects/>"
+        viewAllUrl="https://github.com/Simpleboi"
+        items={PortfolioItems.map((item, index) => ({
+          id: `item-${index}`,
+          title: item.title,
+          summary: item.desc,
+          url: item.link,
+          image: item.image,
+          techStack: item.techStack,
+          status: item.status,
+          year: item.year,
+        }))}
+      />
 
       {/* Leadership Section */}
       <div className="leadership-section">
