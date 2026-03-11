@@ -183,18 +183,20 @@ export const BlogNewsLetter = () => {
         {status === 'success' ? (
           <p className="newsletter-success">You're subscribed! You'll hear from me next time I post.</p>
         ) : (
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input type="submit" value={status === 'loading' ? 'Subscribing…' : 'Subscribe'} disabled={status === 'loading'} />
-          {status === 'duplicate' && <p className="newsletter-error">That email is already subscribed.</p>}
-          {status === 'error' && <p className="newsletter-error">Something went wrong. Try again.</p>}
-        </form>
+          <>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <input type="submit" value={status === 'loading' ? 'Subscribing…' : 'Subscribe'} disabled={status === 'loading'} />
+            </form>
+            {status === 'duplicate' && <p className="newsletter-error">That email is already subscribed.</p>}
+            {status === 'error' && <p className="newsletter-error">Something went wrong. Try again.</p>}
+          </>
         )}
       </div>
     </section>

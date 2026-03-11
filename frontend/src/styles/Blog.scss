@@ -446,6 +446,19 @@
         line-height: 1.6;
       }
 
+      .newsletter-success {
+        color: p.$main-color;
+        font-size: 1rem;
+        margin-top: 1rem;
+        font-weight: 500;
+      }
+
+      .newsletter-error {
+        color: #e53e3e;
+        font-size: 0.9rem;
+        margin-top: 0.75rem;
+      }
+
       form {
         display: flex;
         gap: 1rem;
