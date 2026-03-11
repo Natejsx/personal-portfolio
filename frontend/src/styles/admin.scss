@@ -212,6 +212,13 @@
     padding-top: rem(8px);
   }
 
+  &__preset-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8px);
+    margin-top: rem(-4px);
+  }
+
   &__newsletter {
     display: flex;
     align-items: center;
@@ -306,6 +313,29 @@
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+}
+
+.preset-tag {
+  padding: rem(4px) rem(12px);
+  border-radius: rem(20px);
+  font-size: rem(12px);
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #555;
+  background: transparent;
+  color: #aaa;
+  transition: all 0.15s ease;
+
+  &:hover {
+    border-color: $main-color;
+    color: $main-color;
+  }
+
+  &--active {
+    background: rgba($main-color, 0.15);
+    border-color: $main-color;
+    color: $main-color;
   }
 }
 

@@ -22,6 +22,11 @@ function todayFormatted(): string {
   });
 }
 
+const PRESET_TAGS = [
+  'Personal', 'Mental Health', 'Philosophy', 'Self-Improvement', 'Relationships', 'Career',
+  'Web Development', 'Programming', 'React', 'TypeScript',
+];
+
 const EMPTY_FORM: NewPostPayload = {
   slug: "",
   title: "",
@@ -85,6 +90,15 @@ export default function PostEditor() {
       .map((t) => t.trim())
       .filter(Boolean);
     set("tags", tags);
+  }
+
+  function handlePresetTag(tag: string) {
+    const current = tagsInput.split(",").map((t) => t.trim()).filter(Boolean);
+    const updated = current.includes(tag)
+      ? current.filter((t) => t !== tag)
+      : [...current, tag];
+    setTagsInput(updated.join(", "));
+    set("tags", updated);
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -201,6 +215,18 @@ export default function PostEditor() {
                 placeholder="Personal, Philosophy, Web Development"
               />
             </label>
+            <div className="post-editor__preset-tags">
+              {PRESET_TAGS.map((tag) => (
+                <button
+                  key={tag}
+                  type="button"
+                  className={`preset-tag ${form.tags.includes(tag) ? 'preset-tag--active' : ''}`}
+                  onClick={() => handlePresetTag(tag)}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
 
             <label>
               Image Path
