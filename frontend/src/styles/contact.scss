@@ -128,6 +128,7 @@
             border-radius: p.$button-bdr;
             border: 1px solid transparent;
             background-color: p.$primary-bg;
+            color: p.$text-color;
             padding: 0 1rem;
             font-size: 1rem;
             transition: all 0.3s ease;
@@ -160,6 +161,7 @@
           height: 50px;
           border-radius: p.$button-bdr;
           background-color: p.$primary-bg;
+          color: p.$text-color;
           border: 1px solid transparent;
           padding: 0 1rem;
           font-size: 1rem;
@@ -191,6 +193,7 @@
           min-height: 150px;
           border-radius: p.$button-bdr;
           background-color: p.$primary-bg;
+          color: p.$text-color;
           border: 1px solid transparent;
           padding: 1rem;
           font-size: 1rem;
