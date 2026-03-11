@@ -54,7 +54,7 @@ const LeadershipItems: LeadershipItemProps[] = [
 
 const PortfolioItems: PortfolioCardProps[] = [
   {
-    title: 'JournalXP🎮📖',
+    title: 'JournalXP',
     desc: 'A game-like mental health platform that transforms daily reflection into an engaging experience. Users track their mood patterns, build healthy habits, and unlock achievements as they grow, making self-care rewarding and sustainable.',
     link: 'https://journalxp.com/',
     image: '/assets/images/jxp.png',
@@ -70,7 +70,7 @@ const PortfolioItems: PortfolioCardProps[] = [
     year: '2026',
   },
   {
-    title: 'Pyra.js⚡🔥',
+    title: 'Pyra.js',
     desc: 'A high-performance build system delivering Vite-like speed with plugin extensibility. Empowers developers to customize build pipelines for projects of any scale, from simple scripts to complex frameworks, without sacrificing performance.',
     link: 'https://pyrajs.dev/',
     image: '/assets/images/pyralogo.png',
@@ -79,7 +79,7 @@ const PortfolioItems: PortfolioCardProps[] = [
     year: '2026',
   },
   {
-    title: 'The Vault🔒',
+    title: 'The Vault',
     desc: 'A secure, zero-knowledge password manager built with modern web technologies. Vault encrypts your passwords client-side before they ever leave your device, ensuring that only you can access your sensitive data.',
     link: 'https://vaultpm.netlify.app/',
     image: '/assets/images/vault.png',
@@ -94,7 +94,7 @@ const PortfolioItems: PortfolioCardProps[] = [
     year: '2026',
   },
   {
-    title: 'Genesis Programming Language💻',
+    title: 'Genesis Programming Language',
     desc: 'A custom compiled language demonstrating deep compiler engineering expertise. Features strong typing and C-style syntax that transpiles to JavaScript, enabling type-safe code that runs anywhere without a custom runtime.',
     link: 'https://github.com/Simpleboi/Genesis',
     image: '/assets/images/genesis.png',
@@ -103,7 +103,7 @@ const PortfolioItems: PortfolioCardProps[] = [
     year: '2026',
   },
   {
-    title: 'FireSpark🔥✨',
+    title: 'FireSpark',
     desc: 'A lightweight component library that accelerates UI development with production-ready React components. Combines the flexibility of headless components with beautiful defaults—helping teams ship polished interfaces faster.',
     link: 'https://github.com/Simpleboi/FireSpark',
     image: '/assets/images/firespark.png',
@@ -112,7 +112,7 @@ const PortfolioItems: PortfolioCardProps[] = [
     year: '2025',
   },
   {
-    title: 'SparkCSS⚡🎨',
+    title: 'SparkCSS',
     desc: 'A next-generation CSS preprocessor uniting SCSS power with utility-first methodology. Advanced directives like @snippet and @apply enable teams to write scalable, maintainable styles 3x faster than vanilla CSS.',
     link: 'https://github.com/Simpleboi/sparkcss',
     image: '/assets/images/sparkcss.png',
@@ -121,7 +121,7 @@ const PortfolioItems: PortfolioCardProps[] = [
     year: '2024',
   },
   {
-    title: 'SJC Computer Science Club 💻🚀',
+    title: 'SJC Computer Science Club',
     desc: 'A thriving tech community platform serving 100+ students through hands-on workshops, hackathons, and coding challenges. Bridges the gap between academic theory and real-world development skills.',
     link: 'https://sjcsouthcompsci.netlify.app/',
     image: compsci,
@@ -130,7 +130,7 @@ const PortfolioItems: PortfolioCardProps[] = [
     year: '2024',
   },
   {
-    title: 'Done By Devonne💅🏽',
+    title: 'Done By Devonne',
     desc: 'A professional portfolio website converting 40% more visitors into bookings through stunning gallery displays and mobile-optimized design. Showcases nail artistry with fast-loading images and seamless navigation.',
     link: 'https://donebydevonne.netlify.app',
     image: '/assets/images/donebydevonne.png',

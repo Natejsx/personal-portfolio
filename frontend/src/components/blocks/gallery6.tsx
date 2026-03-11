@@ -51,7 +51,7 @@ const Gallery6 = ({
   }, [carouselApi]);
 
   return (
-    <section className="py-16">
+    <section className="gallery-section py-16">
       <div style={{ paddingLeft: '2rem', paddingRight: '3rem' }}>
         <div className="flex flex-col justify-between md:flex-row md:items-end" style={{ marginBottom: '1rem' }}>
           <div>
@@ -72,9 +72,7 @@ const Gallery6 = ({
             <Button
               size="icon"
               variant="outline"
-              onClick={() => {
-                carouselApi?.scrollPrev();
-              }}
+              onClick={() => { carouselApi?.scrollPrev(); }}
               disabled={!canScrollPrev}
               className="disabled:pointer-events-auto border-[#b9a590]/40 bg-transparent text-[#ece4da] hover:bg-[#b9a590]/20 hover:text-[#ece4da] disabled:opacity-30"
             >
@@ -83,9 +81,7 @@ const Gallery6 = ({
             <Button
               size="icon"
               variant="outline"
-              onClick={() => {
-                carouselApi?.scrollNext();
-              }}
+              onClick={() => { carouselApi?.scrollNext(); }}
               disabled={!canScrollNext}
               className="disabled:pointer-events-auto border-[#b9a590]/40 bg-transparent text-[#ece4da] hover:bg-[#b9a590]/20 hover:text-[#ece4da] disabled:opacity-30"
             >
@@ -108,7 +104,7 @@ const Gallery6 = ({
         >
           <CarouselContent style={{ marginLeft: '2rem' }} className="gap-6">
             {items.map((item) => (
-              <CarouselItem key={item.id} className="pl-0 md:max-w-[452px]">
+              <CarouselItem key={item.id} className="pl-0 gallery-card md:max-w-[452px]">
                 <a
                   href={item.url}
                   target="_blank"

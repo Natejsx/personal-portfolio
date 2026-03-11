@@ -459,6 +459,34 @@
   }
 }
 
+@media (max-width: 768px) {
+  .gallery-section {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+
+    // Header: reduce padding and shrink heading
+    & > div:first-child {
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    // Buttons row: less top margin so it's not too spaced out
+    .mt-8 {
+      margin-top: 1rem;
+    }
+
+    // Cards: constrain width so you can peek at the next card
+    .gallery-card {
+      max-width: 78vw !important;
+      min-width: 78vw;
+    }
+  }
+}
+
 @media (max-width: 480px) {
   .leadership-section {
     padding: 3rem 1rem 2rem 1rem;
