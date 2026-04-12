@@ -1,34 +1,7 @@
-import express from "express";
-import path from "path";
-import cors from "cors";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
-import authRouter from "./routes/auth";
-import postsRouter from "./routes/posts";
-import subscribersRouter from "./routes/subscribers";
-dotenv.config();
+import app from "./app";
 
-const app = express();
 const PORT = Number(process.env.PORT || 8080);
-
-app.use(cors());
-app.use(express.json());
-
-// API routes
-app.use("/api/auth", authRouter);
-app.use("/api/posts", postsRouter);
-app.use("/api/subscribers", subscribersRouter);
-app.get("/api/hello", (_req, res) => res.json({ message: "Hello from the backend!" }));
-
-// Static assets from Vite build
-const distPath = path.join(__dirname, "..", "..", "frontend", "dist");
-app.use(express.static(distPath));
-
-// SPA fallback for everything NOT starting with /api
-app.get(/^(?!\/api).*/, (_req, res) => {
-  res.sendFile(path.join(distPath, "index.html"));
-});
-
 const MONGODB_URI = process.env.MONGODB_URI ?? "";
 
 mongoose
