@@ -314,11 +314,21 @@ export const Posts: PostMeta[] = [
     slug: 'forward',
     title: 'Carrying it Forward',
     description:
-      'This post is about letting go of a love that was real, even when neither of us was ready to walk away. It’s a reflection on what we had, what we built, and the ways it changed me for the better.',
+      "This post is about letting go of a love that was real, even when neither of us was ready to walk away. It's a reflection on what we had, what we built, and the ways it changed me for the better.",
     date: 'April 4th, 2026',
     tags: ['Personal', 'Relationships'],
     image: '/assets/images/couple.jpg',
     readingTime: 9,
     component: React.lazy(() => import('../posts/forward')),
+  },
+  {
+    slug: 'forgiveness',
+    title: 'Growth Doesn’t Guarantee Closure',
+    description: 'This post is about the quiet expectation I had for people to forgive me on my timeline, and the realization that my way of moving on isn’t the same as theirs.',
+    date: 'April 13th, 2026',
+    tags: ['Personal', 'Philosophy'],
+    image: '/assets/images/forgiveness.jpg',
+    readingTime: 7,
+    component: React.lazy(() => import('../posts/forgiveness')),
   },
 ];
