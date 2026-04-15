@@ -331,4 +331,14 @@ export const Posts: PostMeta[] = [
     readingTime: 7,
     component: React.lazy(() => import('../posts/forgiveness')),
   },
+  {
+    slug: 'overthinking',
+    title: 'Finding Peace in What You Can’t Control',
+    description: 'This post is about learning to let go of the need to control everything, and how overthinking and fear can quietly take over your mind without you realizing it.',
+    date: 'April 14th, 2026',
+    tags: ['Personal', 'Mental Health', 'Philosophy'],
+    image: '/assets/images/overthinking.jpg',
+    readingTime: 5,
+    component: React.lazy(() => import('../posts/overthinking')),
+  },
 ];
