@@ -338,7 +338,7 @@ export const Posts: PostMeta[] = [
     date: 'April 14th, 2026',
     tags: ['Personal', 'Mental Health', 'Philosophy'],
     image: '/assets/images/overthinking.jpg',
-    readingTime: 5,
+    readingTime: 8,
     component: React.lazy(() => import('../posts/overthinking')),
   },
 ];
