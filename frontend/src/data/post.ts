@@ -345,7 +345,7 @@ export const Posts: PostMeta[] = [
     title: "Who Am I Without Your Expectations?",
     description:
       "This post challenges gender stereotypes and the pressure to fit into rigid roles, reflecting on how these expectations affect identity, relationships, and mental health, and why everyone deserves the freedom to exist as they are without judgment.",
-    date: "April 23rd, 2025",
+    date: "April 23rd, 2026",
     tags: ["Personal", "Mental Health"],
     image: "/assets/images/gender.jpg",
     readingTime: 14,
