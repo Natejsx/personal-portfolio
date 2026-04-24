@@ -189,17 +189,6 @@ export const Posts: PostMeta[] = [
     readingTime: 9,
     component: React.lazy(() => import('../posts/Happiness')),
   },
-  // {
-  //   slug: "gender",
-  //   title: "Who Am I Without Your Expectations?",
-  //   description:
-  //     "This post dives into the emotional toll of gender roles, from suppressing feelings to losing yourself in a persona, and why breaking free from these expectations matters for our mental health.",
-  //   date: "November 20th, 2025",
-  //   tags: ["Personal", "Mental Health"],
-  //   image: "/assets/images/gender.jpg",
-  //   readingTime: 14,
-  //   component: React.lazy(() => import("../posts/GenderWars")),
-  // },
   {
     slug: 'thanksgiving',
     title: 'Happy Thanksgiving🧡🍂',
@@ -350,5 +339,16 @@ export const Posts: PostMeta[] = [
     image: '/assets/images/peaches.jpg',
     readingTime: 8,
     component: React.lazy(() => import('../posts/Peach')),
+  },
+  {
+    slug: "gender",
+    title: "Who Am I Without Your Expectations?",
+    description:
+      "This post challenges gender stereotypes and the pressure to fit into rigid roles, reflecting on how these expectations affect identity, relationships, and mental health, and why everyone deserves the freedom to exist as they are without judgment.",
+    date: "April 23rd, 2025",
+    tags: ["Personal", "Mental Health"],
+    image: "/assets/images/gender.jpg",
+    readingTime: 14,
+    component: React.lazy(() => import("../posts/GenderWars")),
   },
 ];

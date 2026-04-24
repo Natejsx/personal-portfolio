@@ -6,7 +6,7 @@ const Gender = () => {
         stereotypes. As a kid I always wondered why men and women were expected
         to behave a certain way, why there was this invisible list of rules for
         how we should act. I enjoyed the things that I enjoyed, simple as that,
-        until someone told me it wasn't “manly” or that I “shouldn't” be doing
+        until someone told me it wasn't <em>“manly”</em> or that I <em>“shouldn't”</em> be doing
         it. That was the first time I realized how tightly people cling to these
         boxes.
         <br />
@@ -16,7 +16,7 @@ const Gender = () => {
         crave being the one in charge. I'm more comfortable following, being
         guided, or working alongside someone rather than above them. And I've
         gotten a surprising amount of backlash for that preference. At one
-        point, someone I cared about betrayed me and became intimate with
+        point, an old girlfriend of mine betrayed me and became intimate with
         another guy because, in her words, he “took charge” more than I did. He
         was more controlling, more dominant, and she found that attractive.
         Hearing that really hurt me, not just emotionally, but in a way that
@@ -36,12 +36,12 @@ const Gender = () => {
         <br />
         I've grown to <strong>strongly</strong> reject gender stereotypes.
         People act like a man isn't a “<em>real man</em>” unless he works a
-        traditionally masculine job like construction, trades, manual labor.
+        traditionally masculine job like construction, trades, or manual labor for example.
         Meanwhile, I spend my days writing code, building software, and creating
         things with my brain more than with my hands. But somehow society has
         made men who sit at computers feel less legitimate than men who pick up
         tools. I wish I was lying but I've literally been made fun of because my
-        hands are clean, not covered in dirt or bruises. And that's one of the
+        hands are clean, not covered in dirt or calluses. And that's one of the
         stupidest things I've had to witness.
         <br />
         <br />
@@ -85,9 +85,7 @@ const Gender = () => {
         You might feel lonely but act like you're fine. Over time, this kind of
         emotional dissonance builds into depression, burnout, and self-hatred.
         It's impossible to heal when you're not allowed to admit you're hurt.
-        <br />
-        <br />
-        This is why emotional awareness matters so much. This is why spaces like{' '}
+        {/* This is why emotional awareness matters so much. This is why spaces like{' '}
         <a
           href="https://journalxp.com/"
           target="_blank"
@@ -100,7 +98,7 @@ const Gender = () => {
         supposed to be, journaling gives you a moment to ask yourself who you
         actually are. And the truth is that men deserve that freedom. Men
         deserve softness. Men deserve emotional clarity. Men deserve to be whole
-        human beings, not characters playing out someone else's script.
+        human beings, not characters playing out someone else's script. */}
         <br />
         <br />
         Another piece of this whole issue is the growing “gender war.” Every day
@@ -205,13 +203,13 @@ const Gender = () => {
         yourself without apology. A world where humanity comes before
         expectations. And even if we aren't there yet, it's a vision worth
         working toward, one conversation and one mindset at a time.
-        <br />
+        {/* <br />
         <br />
         And before anybody twists this into something political, let me be
         clear: I'm not speaking from a political standpoint. I'm not a democrat
         or a republican. I don't follow politics or engage in political debates.
         These are simply observations, things I've seen, experiences I've lived
-        through, and problems I see happening in the world around me.
+        through, and problems I see happening in the world around me. */}
         <br />
         <br />
         At the end of the day, my point is simple: people should be allowed to
