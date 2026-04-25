@@ -24,7 +24,10 @@ backend/dist/
 
 # 🔒 Environment variables
 **/.env
-**/.env.*    
+**/.env.*
+
+# 🔑 Firebase service account key
+**/serviceAccountKey.json
 
 # 🗑 Logs
 **/npm-debug.log*
