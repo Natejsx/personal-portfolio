@@ -38,7 +38,7 @@ export async function getAllPostsAdmin(_req: Request, res: Response): Promise<vo
 
 export async function getPostBySlug(req: Request, res: Response): Promise<void> {
   try {
-    const doc = await db.collection(POSTS).doc(req.params.slug).get();
+    const doc = await db.collection(POSTS).doc(req.params.slug as string).get();
     if (!doc.exists) {
       res.status(404).json({ message: "Post not found" });
       return;
@@ -70,7 +70,7 @@ export async function createPost(req: Request, res: Response): Promise<void> {
 
 export async function updatePost(req: Request, res: Response): Promise<void> {
   try {
-    const docRef = db.collection(POSTS).doc(req.params.slug);
+    const docRef = db.collection(POSTS).doc(req.params.slug as string);
     const existing = await docRef.get();
     if (!existing.exists) {
       res.status(404).json({ message: "Post not found" });
@@ -86,7 +86,7 @@ export async function updatePost(req: Request, res: Response): Promise<void> {
 
 export async function deletePost(req: Request, res: Response): Promise<void> {
   try {
-    const docRef = db.collection(POSTS).doc(req.params.slug);
+    const docRef = db.collection(POSTS).doc(req.params.slug as string);
     const existing = await docRef.get();
     if (!existing.exists) {
       res.status(404).json({ message: "Post not found" });

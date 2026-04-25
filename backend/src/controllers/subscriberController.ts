@@ -66,7 +66,7 @@ export async function sendNewsletter(req: Request, res: Response): Promise<void>
   const { slug } = req.params;
 
   try {
-    const postDoc = await db.collection(POSTS).doc(slug).get();
+    const postDoc = await db.collection(POSTS).doc(slug as string).get();
     if (!postDoc.exists) {
       res.status(404).json({ message: "Post not found" });
       return;
