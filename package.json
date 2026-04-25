@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:front": "cd frontend && pnpm run dev",
-    "dev:back": "cd backend && pnpm run dev",
     "install:all": "pnpm run install:front && pnpm run install:back",
     "install:front": "cd frontend && pnpm install",
     "install:back": "cd backend && pnpm install",
@@ -15,7 +14,8 @@
     "build:all": "pnpm run build:front && pnpm run build:back",
     "typecheck:front": "cd frontend && pnpm exec tsc --noEmit",
     "typecheck:back": "cd backend && pnpm exec tsc --noEmit",
-    "typecheck": "pnpm run typecheck:front && pnpm run typecheck:back"
+    "typecheck": "pnpm run typecheck:front && pnpm run typecheck:back",
+    "deploy": "cd backend && pnpm run deploy"
   },
   "engines": { "node": ">=18" },
   "keywords": ["Personal Portfolio", "Blog"],
