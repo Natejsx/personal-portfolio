@@ -1,35 +1,50 @@
 import { Request, Response } from "express";
-import Post from "../models/Post";
+import { FieldValue } from "firebase-admin/firestore";
+import { db } from "../lib/firebaseAdmin";
+import { IPost } from "../models/Post";
+
+const POSTS = "posts";
 
 export async function getAllPosts(_req: Request, res: Response): Promise<void> {
   try {
-    const posts = await Post.find({ published: true })
-      .select("-content")
-      .sort({ createdAt: -1 });
+    const snapshot = await db.collection(POSTS)
+      .where("published", "==", true)
+      .orderBy("createdAt", "desc")
+      .get();
+    const posts = snapshot.docs.map((doc) => {
+      const { content, ...rest } = doc.data() as IPost;
+      return rest;
+    });
     res.json(posts);
-  } catch (err) {
+  } catch {
     res.status(500).json({ message: "Server error" });
   }
 }
 
 export async function getAllPostsAdmin(_req: Request, res: Response): Promise<void> {
   try {
-    const posts = await Post.find().select("-content").sort({ createdAt: -1 });
+    const snapshot = await db.collection(POSTS)
+      .orderBy("createdAt", "desc")
+      .get();
+    const posts = snapshot.docs.map((doc) => {
+      const { content, ...rest } = doc.data() as IPost;
+      return rest;
+    });
     res.json(posts);
-  } catch (err) {
+  } catch {
     res.status(500).json({ message: "Server error" });
   }
 }
 
 export async function getPostBySlug(req: Request, res: Response): Promise<void> {
   try {
-    const post = await Post.findOne({ slug: req.params.slug });
-    if (!post) {
+    const doc = await db.collection(POSTS).doc(req.params.slug).get();
+    if (!doc.exists) {
       res.status(404).json({ message: "Post not found" });
       return;
     }
-    res.json(post);
-  } catch (err) {
+    res.json(doc.data());
+  } catch {
     res.status(500).json({ message: "Server error" });
   }
 }
@@ -38,45 +53,48 @@ export async function createPost(req: Request, res: Response): Promise<void> {
   try {
     const { slug, title, description, date, tags, image, readingTime, content, published } = req.body;
 
-    const existing = await Post.findOne({ slug });
-    if (existing) {
+    const docRef = db.collection(POSTS).doc(slug);
+    const existing = await docRef.get();
+    if (existing.exists) {
       res.status(409).json({ message: "A post with this slug already exists" });
       return;
     }
 
-    const post = await Post.create({ slug, title, description, date, tags, image, readingTime, content, published });
+    const post = { slug, title, description, date, tags, image, readingTime, content, published: published ?? true, createdAt: FieldValue.serverTimestamp() };
+    await docRef.set(post);
     res.status(201).json(post);
-  } catch (err) {
+  } catch {
     res.status(500).json({ message: "Server error" });
   }
 }
 
 export async function updatePost(req: Request, res: Response): Promise<void> {
   try {
-    const post = await Post.findOneAndUpdate(
-      { slug: req.params.slug },
-      req.body,
-      { new: true, runValidators: true }
-    );
-    if (!post) {
+    const docRef = db.collection(POSTS).doc(req.params.slug);
+    const existing = await docRef.get();
+    if (!existing.exists) {
       res.status(404).json({ message: "Post not found" });
       return;
     }
-    res.json(post);
-  } catch (err) {
+    await docRef.update(req.body);
+    const updated = await docRef.get();
+    res.json(updated.data());
+  } catch {
     res.status(500).json({ message: "Server error" });
   }
 }
 
 export async function deletePost(req: Request, res: Response): Promise<void> {
   try {
-    const post = await Post.findOneAndDelete({ slug: req.params.slug });
-    if (!post) {
+    const docRef = db.collection(POSTS).doc(req.params.slug);
+    const existing = await docRef.get();
+    if (!existing.exists) {
       res.status(404).json({ message: "Post not found" });
       return;
     }
+    await docRef.delete();
     res.status(204).send();
-  } catch (err) {
+  } catch {
     res.status(500).json({ message: "Server error" });
   }
 }
