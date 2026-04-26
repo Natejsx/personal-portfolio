@@ -13,6 +13,26 @@
   }
 }
 
+// ── Login Nav ─────────────────────────────────────────────────────────────────
+
+.admin-nav {
+  display: flex;
+  gap: rem(24px);
+  margin-bottom: rem(16px);
+
+  a {
+    color: $light-text;
+    text-decoration: none;
+    font-size: rem(14px);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 // ── Login ─────────────────────────────────────────────────────────────────────
 
 .admin-login {

@@ -1,5 +1,5 @@
 import { useState, FormEvent, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { adminLogin } from "../../services/api";
 import "../../styles/admin.scss";
@@ -32,6 +32,10 @@ export default function AdminLogin() {
 
   return (
     <div className="admin-layout">
+      <nav className="admin-nav">
+        <Link to="/">Home</Link>
+        <Link to="/Blog">Blog</Link>
+      </nav>
       <div className="admin-login">
         <h1>Admin</h1>
         <form onSubmit={handleSubmit}>
