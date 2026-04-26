@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:front": "cd frontend && pnpm run dev",
+    "dev": "cd frontend && pnpm run dev",
     "install:all": "pnpm run install:front && pnpm run install:back",
     "install:front": "cd frontend && pnpm install",
     "install:back": "cd backend && pnpm install",
