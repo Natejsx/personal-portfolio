@@ -25,7 +25,7 @@ export const BlogPostCard: React.FC<BlogPostProps> = ({
   return (
     <article className="blog-post-card">
       <div className="blog-post-image">
-        <img src={image} alt={postName} />
+        <img src={image} alt={postName} loading="lazy" decoding="async" />
         <div className="post-date">
           <span>{postDate}</span>
         </div>
